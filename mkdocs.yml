@@ -85,7 +85,18 @@ nav:
           - 多模态表征: foundations/vision-language-models/multimodal-representation.md
           - 跨模态对齐: foundations/vision-language-models/cross-modal-alignment.md
           - 视觉定位: foundations/vision-language-models/visual-grounding.md
-  - Hallucination: hallucination/index.md
+  - 可信性与幻觉:
+      - 总览: hallucination/index.md
+      - 模型可信性: hallucination/trustworthiness-overview.md
+      - 事实性: hallucination/factuality.md
+      - 忠实性: hallucination/faithfulness.md
+      - 鲁棒性: hallucination/robustness.md
+      - 幻觉定义: hallucination/hallucination-definition.md
+      - 幻觉分类: hallucination/hallucination-taxonomy.md
+      - 成因与 Failure Modes: hallucination/causes-failure-modes.md
+      - 幻觉检测: hallucination/detection.md
+      - 幻觉缓解: hallucination/mitigation.md
+      - 正确性与可靠性: hallucination/reliability-correctness.md
   - Uncertainty Quantification:
       - uncertainty/index.md
       - Confidence Calibration: calibration/index.md
