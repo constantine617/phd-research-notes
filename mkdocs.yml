@@ -58,8 +58,33 @@ extra_css:
   - stylesheets/extra.css
 nav:
   - Home: index.md
-  - Research Overview: research-overview/index.md
-  - Foundations: foundations/index.md
+  - 研究总览:
+      - 总览: research-overview/index.md
+      - 研究范围: research-overview/research-scope.md
+      - 研究路线图: research-overview/research-map.md
+      - 研究问题: research-overview/research-questions.md
+      - 当前研究重点: research-overview/current-focus.md
+  - 基础知识:
+      - 总览: foundations/index.md
+      - 语言模型:
+          - 总览: foundations/language-models/index.md
+          - 自回归生成: foundations/language-models/autoregressive-generation.md
+          - Token 与序列概率: foundations/language-models/token-sequence-probability.md
+          - 解码与 Sampling: foundations/language-models/decoding-sampling.md
+          - Hidden Representations: foundations/language-models/hidden-representations.md
+      - 概率与信息论:
+          - 总览: foundations/probability-information-theory/index.md
+          - 概率与似然: foundations/probability-information-theory/probability-likelihood.md
+          - 熵: foundations/probability-information-theory/entropy.md
+          - 交叉熵: foundations/probability-information-theory/cross-entropy.md
+          - 负对数似然: foundations/probability-information-theory/negative-log-likelihood.md
+          - KL 散度: foundations/probability-information-theory/kl-divergence.md
+      - 视觉语言模型:
+          - 总览: foundations/vision-language-models/index.md
+          - 大型视觉语言模型: foundations/vision-language-models/lvlm-overview.md
+          - 多模态表征: foundations/vision-language-models/multimodal-representation.md
+          - 跨模态对齐: foundations/vision-language-models/cross-modal-alignment.md
+          - 视觉定位: foundations/vision-language-models/visual-grounding.md
   - Hallucination: hallucination/index.md
   - Uncertainty Quantification:
       - uncertainty/index.md

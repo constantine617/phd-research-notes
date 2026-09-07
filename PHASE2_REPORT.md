@@ -149,4 +149,4 @@ uv run --locked --no-dev mkdocs serve -a 127.0.0.1:8000
 
 仅在用户审核后，讨论公开笔记的写作规范、少量 paper-note 模板及是否需要 BibTeX；不自动创建论文库或导入 PhD 内容。本次不进入 Phase 3。
 
-**Phase 2 PASS。** 上述未验证项是明确的测试边界，不是隐藏的构建/部署失败。
+**Phase 2 PASS。** 上述未验证项是明确的测试边界，不是隐藏的构建/部署失败。  
