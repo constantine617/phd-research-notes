@@ -29,7 +29,7 @@ Write public Markdown in `docs/` and update the handwritten `nav` in `mkdocs.yml
 
 Math uses PyMdown arithmatex and MathJax 3.2.2 from jsDelivr. Mermaid uses Material's standard superfences integration. Tags and search are built-in plugins. Light/dark mode and responsive navigation use the native theme; custom CSS is empty. Instant navigation is disabled so each page loads and typesets normally.
 
-The intentionally public [feature fixture](https://constantine617.github.io/phd-research-notes/feature-test/) is kept for regression checks but absent from the main navigation. It remains searchable. CDN availability is required for math and diagram rendering.
+CDN availability is required for math and diagram rendering. Infrastructure is frozen at [Infrastructure Baseline v1](INFRASTRUCTURE_BASELINE.md), identified by the `infra-v1` Git tag.
 
 ## Deployment
 

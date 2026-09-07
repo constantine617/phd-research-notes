@@ -56,9 +56,6 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 extra_css:
   - stylesheets/extra.css
-# Public developer fixture, intentionally absent from the main navigation.
-not_in_nav: |
-  /feature-test.md
 nav:
   - Home: index.md
   - Research Overview: research-overview/index.md
