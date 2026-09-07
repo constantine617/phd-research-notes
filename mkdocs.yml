@@ -97,11 +97,31 @@ nav:
       - 幻觉检测: hallucination/detection.md
       - 幻觉缓解: hallucination/mitigation.md
       - 正确性与可靠性: hallucination/reliability-correctness.md
-  - Uncertainty Quantification:
-      - uncertainty/index.md
-      - Confidence Calibration: calibration/index.md
-      - Efficient UQ: efficient-uq/index.md
-      - Representation-based UQ: representation-uq/index.md
+  - 不确定性量化:
+      - 总览: uncertainty/index.md
+      - UQ 总览: uncertainty/uq-overview.md
+      - UQ 分类: uncertainty/uq-taxonomy.md
+      - 概念基础:
+          - LLM 中的不确定性: uncertainty/foundations/uncertainty-in-llms.md
+          - 认知与数据不确定性: uncertainty/foundations/epistemic-aleatoric.md
+          - 置信度与不确定性: uncertainty/foundations/confidence-vs-uncertainty.md
+          - 不确定性与正确性: uncertainty/foundations/uncertainty-vs-correctness.md
+      - 基于概率的 UQ: uncertainty/probability-based/index.md
+      - Sampling 方法:
+          - 总览: uncertainty/sampling-based/index.md
+          - 自一致性: uncertainty/sampling-based/self-consistency.md
+          - 预测熵: uncertainty/sampling-based/predictive-entropy.md
+          - 语义熵: uncertainty/sampling-based/semantic-entropy.md
+      - Verbal Confidence: uncertainty/verbal-confidence/index.md
+      - 置信度校准:
+          - 总览: calibration/index.md
+          - 校准方法: calibration/calibration-methods.md
+          - 后处理校准: calibration/post-hoc-calibration.md
+      - 高效 UQ: efficient-uq/index.md
+      - 基于表征的 UQ:
+          - 总览: representation-uq/index.md
+          - Hidden State 与不确定性: representation-uq/hidden-state-uncertainty.md
+      - 证据感知 UQ: uncertainty/evidence-aware/index.md
   - Multimodal Research: multimodal/index.md
   - Paper Notes: papers/index.md
   - Research Log: research-log/index.md
