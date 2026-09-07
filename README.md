@@ -1,102 +1,42 @@
-# A Material for MkDocs Documentation Template
+# PhD Research Notes
 
-This template uses MkDocs with the Material theme to create elegant, responsive, and well-structured documentation for your projects.
+A Markdown-first knowledge base for trustworthy LLMs and LVLMs, hallucination, uncertainty quantification, confidence calibration, and multimodal reasoning.
 
-## Getting Started
+This project is based on [lifeadventurer/mkdocs-material-template](https://github.com/lifeadventurer/mkdocs-material-template).
+Upstream baseline: `f1a77ee1696c7e574229ae8b9e538e448c82665c`. The original MIT license and copyright are retained in [LICENSE](LICENSE).
 
-This repository is a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-You can create your repository by clicking the `Use this template` button on the upper right corner.
+## Local development
 
-## Prerequisites
+Install Python 3.12 and [uv](https://docs.astral.sh/uv/) (CI uses uv 0.8.6), then run:
 
-Before you begin, make sure you have the following installed:
+```powershell
+uv sync --locked --no-dev
+uv run --locked --no-dev mkdocs serve
+```
 
-- Python (version 3.8 or higher)
-- uv (recommended)
-- or pip
+Open <http://127.0.0.1:8000/phd-research-notes/>. No environment activation, Node, database, or backend is needed.
 
-## Installation
+```powershell
+uv run --locked --no-dev mkdocs build
+uv run --locked --no-dev mkdocs build --strict
+```
 
-### Using uv (recommended)
+`pyproject.toml` defines dependencies; `uv.lock` pins their resolution. These are the only dependency sources. The upstream requirements export and unused developer tooling have been removed. Python is restricted to 3.12; MkDocs 1.6.1 and Material 9.7.7 are pinned. Update deliberately on a branch with `uv lock`, then validate before merging. Do not implicitly upgrade to MkDocs 2.x.
 
-1. Clone the repository:
+## Content and features
 
-   ```shell
-   git clone https://github.com/<username>/<repo-name>.git
-   cd <repo-name>
-   ```
+Write public Markdown in `docs/` and update the handwritten `nav` in `mkdocs.yml`. Research Log is an ordinary directory. Initial topic pages are placeholders.
 
-2. Install dependencies:
+Math uses PyMdown arithmatex and MathJax 3.2.2 from jsDelivr. Mermaid uses Material's standard superfences integration. Tags and search are built-in plugins. Light/dark mode and responsive navigation use the native theme; custom CSS is empty. Instant navigation is disabled so each page loads and typesets normally.
 
-   ```shell
-   uv sync
-   ```
+The intentionally public [feature fixture](https://constantine617.github.io/phd-research-notes/feature-test/) is kept for regression checks but absent from the main navigation. It remains searchable. CDN availability is required for math and diagram rendering.
 
-3. Activate the virtual environment:
+## Deployment
 
-   ```shell
-   source .venv/bin/activate # On Windows use `.venv\Scripts\activate`
-   ```
+Main pushes install locked dependencies and run `mkdocs build --strict`, then publish the exact build artifact to `gh-pages`. The publisher `ghp-import` is already a MkDocs dependency. Pull requests only build, with read-only repository permissions. Pages uses **Deploy from a branch → gh-pages → / (root)**. No custom domain or repository secret is required.
 
-### Using pip
+Site: <https://constantine617.github.io/phd-research-notes/>.
 
-1. Clone the repository:
+## Public/private boundary
 
-   ```shell
-   git clone https://github.com/<username>/<repo-name>.git
-   cd <repo-name>
-   ```
-
-2. Create and activate a virtual environment:
-
-   ```shell
-   python -m venv venv
-   source venv/bin/activate # On Windows use `venv\Scripts\activate`
-   ```
-
-3. Install dependencies:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-1. Preview the documentation:
-
-   ```shell
-   mkdocs serve
-   ```
-
-   Your documentation site will be available at `https://localhost:8000/`.
-
-2. Build the documentation for deployment:
-
-   ```shell
-   mkdocs build
-   ```
-
-   The static site will be generated in the `site` directory.
-
-3. Deploy to GitHub Pages:
-
-   ```shell
-   mkdocs gh-deploy
-   ```
-
-   This command will deploy your site to the `gh-pages` branch of your repository and make it available on GitHub Pages.
-
-## Configuration
-
-Configure your documentation by editing the `mkdocs.yml` file. This file contains various settings such as theme, extension, and navigation structure. For more information, refer to the [Material for MkDocs Documentation](https://squidfunk.github.io/mkdocs-material/)
-
-## Acknowledgements
-
-This template is built using the following open-source projects:
-
-- [MkDocs](https://github.com/mkdocs/mkdocs/): A fast, simple and downright gorgeous static site generator that's geared towards building project documentation.
-- [Material for MkDocs](https://github.com/squidfunk/mkdocs-material): A Material Design theme for MkDocs, created by Martin Donath (Squidfunk).
-
-## LICENSE
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+Everything in `docs/` may be published, including files omitted from navigation and non-Markdown assets. Only explicitly public content belongs here. Keep private notes, supervisor discussions, unpublished results, datasets, and confidential ideas outside this public repository. Do not synchronize research folders or include files outside `docs/`. Gitignore cannot erase committed secrets.

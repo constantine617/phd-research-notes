@@ -1,11 +1,11 @@
 [project]
-name = "mkdocs-material-template"
+name = "phd-research-notes"
 version = "0.1.0"
-description = "A Material for MkDocs Documentation Template "
+description = "A Markdown-first PhD research knowledge base"
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.11"
-dependencies = ["mkdocs-glightbox>=0.4.0", "mkdocs-material>=9.6.16"]
+requires-python = ">=3.12,<3.13"
+dependencies = ["mkdocs==1.6.1", "mkdocs-material==9.7.7"]
 
-[dependency-groups]
-dev = ["pre-commit>=4.2.0"]
+[tool.uv]
+package = false

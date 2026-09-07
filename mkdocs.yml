@@ -1,122 +1,75 @@
-# Project information
-site_name: MkDocs Material Template
-site_url: https://lifeadventurer.github.io/mkdocs-material-template
-site_author: Life Adventurer
-site_description: MkDocs Material template
+site_name: PhD Research Notes
+site_description: Research notes on trustworthy LLMs and LVLMs, uncertainty, calibration, and multimodal reasoning.
+site_url: https://constantine617.github.io/phd-research-notes/
+repo_name: constantine617/phd-research-notes
+repo_url: https://github.com/constantine617/phd-research-notes
+edit_uri: edit/main/docs/
+docs_dir: docs
 
-# Repository
-repo_name: LifeAdventurer/mkdocs-material-template
-repo_url: https://github.com/LifeAdventurer/mkdocs-material-template
-
-# Copyright
-copyright: Copyright &copy; 2025 Life Adventurer
-
-# Configuration
 theme:
   name: material
   language: en
+  font: false
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       toggle:
-        icon: material//weather-sunny
+        icon: material/weather-sunny
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      primary: indigo
-      scheme: slate
+    - scheme: slate
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-  icon:
-    repo: fontawesome/brands/github
   features:
-    - content.code.copy
-    - navigation.expand
-    - navigation.footer
     - navigation.indexes
     - navigation.sections
-    - navigation.tabs
+    - navigation.top
+    - content.code.copy
     - search.highlight
-    - search.share
     - search.suggest
     - toc.follow
-
-# Plugins
 plugins:
-  - blog
-  - glightbox
   - search
-
-# Additional configuration
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/LifeAdventurer
-
-# Extensions
+  - tags
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
+  - tables
   - footnotes
-  - md_in_html
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.critic
+  - admonition
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.magiclink:
-      normalize_issue_symbols: true
-      repo_url_shortener: true
-      repo_url_shorthand: true
-      user: LifeAdventurer
-      repo: mkdocs-material-template
-  - pymdownx.mark
-  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-      combine_header_slug: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - tables
   - toc:
       permalink: true
-
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 extra_css:
   - stylesheets/extra.css
-
-# Page tree
+# Public developer fixture, intentionally absent from the main navigation.
+not_in_nav: |
+  /feature-test.md
 nav:
   - Home: index.md
-  - Getting started:
-      - Installation: getting-started.md
-      - License: license.md
-      - Changelog: changelog.md
-  - Reference:
-      - reference/index.md
-      # Example
-      - Reference 1: reference/reference-1.md
-      - Reference 2: reference/reference-2.md
-      - Reference 3: reference/reference-3.md
-  - Community:
-      - Contributing: contributing.md
-  - Blog:
-      - blog/index.md
+  - Research Overview: research-overview/index.md
+  - Foundations: foundations/index.md
+  - Hallucination: hallucination/index.md
+  - Uncertainty Quantification:
+      - uncertainty/index.md
+      - Confidence Calibration: calibration/index.md
+      - Efficient UQ: efficient-uq/index.md
+      - Representation-based UQ: representation-uq/index.md
+  - Multimodal Research: multimodal/index.md
+  - Paper Notes: papers/index.md
+  - Research Log: research-log/index.md
+  - Glossary: glossary/index.md
