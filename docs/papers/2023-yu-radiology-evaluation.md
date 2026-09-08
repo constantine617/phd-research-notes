@@ -8,7 +8,7 @@ tags:
 
 # Evaluating progress in automatic chest X-ray radiology report generation
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Feiyang Yu, Mark Endo, Rayan Krishnan, Ian Pan, Andy Tsai, Eduardo Pontes Reis, Eduardo Kaiser Ururahy Nunes Fonseca, Henrique Min Ho Lee, Zahra Shakeri Hossein Abad, Andrew Y. Ng, Curtis P. Langlotz, Vasantha Kumar Venugopal, Pranav Rajpurkar。
 - 年份：2023。
@@ -21,7 +21,7 @@ tags:
 
 ## 研究问题与评价设计
 
-Yu et al. (2023)研究胸部 X 光报告生成：常用自动指标是否与放射科专家对错误的判断一致。论文比较文本指标与临床表征指标，提出 RadGraph F1 和复合指标 RadCliQ。
+[Yu et al. (2023)](https://doi.org/10.1016/j.patter.2023.100802 "文献引用")研究胸部 X 光报告生成：常用自动指标是否与放射科专家对错误的判断一致。论文比较文本指标与临床表征指标，提出 RadGraph F1 和复合指标 RadCliQ。
 
 研究利用参考报告，从训练语料中为不同指标选择得分最高的候选报告，称为 metric-oracle。它是分析指标行为的工具，使用了真实部署时未知的参考报告，不能当作可直接部署的报告生成系统。
 
@@ -45,14 +45,14 @@ RadGraph F1 比较报告中抽取的医学实体与关系，试图捕捉比词�
 
 ## 与博士研究主线的关系
 
-这篇论文为医学幻觉和可靠性评价提供标签设计范例。将不确定性量化（Uncertainty Quantification，UQ）用于报告时，可以据此区分总体错误、临床严重程度及图像支持，并与一般校准和选择性预测指标共同报告。
+这篇论文为医学幻觉和可靠性评价提供标签设计范例。将 UQ 用于报告时，可以据此区分总体错误、临床严重程度及图像支持，并与一般校准和选择性预测指标共同报告。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [医学评价](../medical/medical-evaluation.md)
 - [人工评价](../evaluation/ground-truth/human-evaluation.md)
 - [临床可靠性](../medical/clinical-reliability.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Yu, F., Endo, M., Krishnan, R., et al. (2023). *Evaluating progress in automatic chest X-ray radiology report generation*. Patterns, 4(9), 100802. [原文](https://doi.org/10.1016/j.patter.2023.100802)

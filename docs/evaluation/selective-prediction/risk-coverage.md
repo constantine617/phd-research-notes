@@ -6,7 +6,7 @@ tags:
 
 # 风险–覆盖率（Risk-Coverage）
 
-风险–覆盖率曲线描述：随着系统接受更多预测，被接受部分的平均损失怎样变化。它将置信度（Confidence）排序转化为选择性预测（Selective Prediction）的评价，而不要求分数已经校准为概率。
+风险–覆盖率曲线描述：随着系统接受更多预测，被接受部分的平均损失怎样变化。它将置信度（Confidence）排序转化为选择性预测的评价，而不要求分数已经校准为概率。
 
 ## 接受规则与经验量
 
@@ -24,7 +24,7 @@ $$
 
 $\widehat C$ 为经验覆盖率，$\widehat R$ 为经验选择风险（Selective Risk）；$\ell$ 为任务损失。分母必须大于零。若采用零一错误损失，$\widehat R$ 就是被接受回答的错误比例。
 
-Geifman and El-Yaniv (2017) 以及 Geifman et al. (2019) 用覆盖率和选择风险评价带拒答的分类器。本页将相同经验计数结构用于已经建立回答正确标签的生成任务，不沿用分类论文中的保证到任意生成任务。
+[Geifman and El-Yaniv (2017)](https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html "文献引用") 以及 [Geifman et al. (2019)](https://arxiv.org/abs/1805.08206 "文献引用") 用覆盖率和选择风险评价带拒答的分类器。本页将相同经验计数结构用于已经建立回答正确标签的生成任务，不沿用分类论文中的保证到任意生成任务。
 
 ## 曲线怎样读
 
@@ -40,11 +40,11 @@ Geifman and El-Yaniv (2017) 以及 Geifman et al. (2019) 用覆盖率和选择�
 
 在验证集选择满足风险目标的阈值后，报告测试覆盖率与风险及其区间。不能通过测试标签寻找一个刚好满足目标的阈值，再称作提前可知的风险控制。跨医院、领域或生成设置变化后，原阈值的风险可能变化。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [风险–覆盖率曲线下面积](aurc.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Geifman, Y., El-Yaniv, R. (2017). *Selective Classification for Deep Neural Networks*. Advances in Neural Information Processing Systems, 30. [Paper](https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html)
 - Geifman, Y., Uziel, G., El-Yaniv, R. (2019). *Bias-Reduced Uncertainty Estimation for Deep Neural Classifiers*. ICLR；首版预印本 2018. [Paper](https://arxiv.org/abs/1805.08206)

@@ -23,9 +23,9 @@ tags:
 
 ## 证据怎样进入模型
 
-Sun et al. (2024) 在事实增强的人类反馈强化学习（Reinforcement Learning from Human Feedback，RLHF）中，向奖励模型加入图像描述和正确选项等事实信息。这是训练阶段的具体做法，不能误写为所有推理时检索证据的方法。
+[Sun et al. (2024)](https://aclanthology.org/2024.findings-acl.775/ "文献引用") 在事实增强的人类反馈强化学习（Reinforcement Learning from Human Feedback，RLHF）中，向奖励模型加入图像描述和正确选项等事实信息。这是训练阶段的具体做法，不能误写为所有推理时检索证据的方法。
 
-Li et al. (2023) 的 POPE 可以依据人工对象标注或自动工具建立对象列表；自动构造扩大了覆盖，却也要求检查标注漏检。对象没有出现在派生列表里，不必然表示图像里不存在。
+[Li et al. (2023)](https://aclanthology.org/2023.emnlp-main.20/ "文献引用") 的 POPE 可以依据人工对象标注或自动工具建立对象列表；自动构造扩大了覆盖，却也要求检查标注漏检。对象没有出现在派生列表里，不必然表示图像里不存在。
 
 ## 冲突与信息缺失
 
@@ -35,12 +35,12 @@ Li et al. (2023) 的 POPE 可以依据人工对象标注或自动工具建立对
 
 医学应用还会涉及既往影像、报告和外部专业知识。当前图像与患者特定背景之间必须有可靠关联；一般医学知识不能直接证明当前个体具有某项发现。具体边界见[医学可靠性](../medical/clinical-reliability.md)。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [证据感知不确定性量化（Uncertainty Quantification，UQ）](../uncertainty/evidence-aware/index.md)
 - [跨模态一致性](cross-modal-consistency.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Sun, Z., Shen, S., Cao, S., et al. (2024). *Aligning Large Multimodal Models with Factually Augmented RLHF*. Findings of ACL；首版预印本 2023. [Paper](https://aclanthology.org/2024.findings-acl.775/)
 - Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W. X., Wen, J.-R. (2023). *Evaluating Object Hallucination in Large Vision-Language Models*. EMNLP, 292–305. [Paper](https://aclanthology.org/2023.emnlp-main.20/)

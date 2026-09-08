@@ -4,9 +4,9 @@ tags:
   - sampling
 ---
 
-# 不确定性量化（Uncertainty Quantification，UQ）：基于 sampling 的方法
+# UQ：基于 sampling 的方法
 
-这类方法给大语言模型（Large Language Model，LLM）相同的 prompt，多次生成回答，再比较一致与分歧。直觉是观察单次回答隐藏的其他可能输出；估计器真正测到什么，则由 sampling 分布、答案比较规则和聚合方式共同决定。
+这类方法给 LLM 相同的 prompt，多次生成回答，再比较一致与分歧。直觉是观察单次回答隐藏的其他可能输出；估计器真正测到什么，则由 sampling 分布、答案比较规则和聚合方式共同决定。
 
 ## 基本工作过程
 
@@ -20,7 +20,7 @@ tags:
 → 构造分数，并关联到明确的目标回答或输入
 ```
 
-[自一致性（Self-Consistency）](self-consistency.md)原本通过多条推理路径聚合最终答案（Wang et al., 2023）。[语义熵（Semantic Entropy）](semantic-entropy.md)则将等价表达聚合为含义类别，再观察类别分布（Kuhn et al., 2023）。两者都需要多个输出，但原始目的和最后产生的量不同。
+[自一致性（Self-Consistency）](self-consistency.md)原本通过多条推理路径聚合最终答案（[Wang et al., 2023](https://arxiv.org/abs/2203.11171v4 "文献引用")）。[语义熵（Semantic Entropy）](semantic-entropy.md)则将等价表达聚合为含义类别，再观察类别分布（[Kuhn et al., 2023](https://arxiv.org/abs/2302.09664v3 "文献引用")）。两者都需要多个输出，但原始目的和最后产生的量不同。
 
 ## 比较规则决定分歧来源
 
@@ -38,13 +38,13 @@ tags:
 
 ## 温度与计算预算
 
-Decoding 温度、候选截断和最大长度会改变观察到的多样性。低温度容易提高一致性，高温度可能放大低质量候选；没有一种设置能仅凭多样性大小被认定为更忠实地测量知识不足。Kuhn et al. (2023) 的消融研究也强调生成准确性与多样性之间的取舍。
+Decoding 温度、候选截断和最大长度会改变观察到的多样性。低温度容易提高一致性，高温度可能放大低质量候选；没有一种设置能仅凭多样性大小被认定为更忠实地测量知识不足。[Kuhn et al. (2023)](https://arxiv.org/abs/2302.09664v3 "文献引用") 的消融研究也强调生成准确性与多样性之间的取舍。
 
 成本除回答生成外，还包括答案解析、两两比较、语义核查和必要的聚合。固定样本预算与按输入自适应追加样本，可以形成不同系统，但自适应停止本身也会影响分数分布，详见[高效 UQ](../../efficient-uq/index.md)。
 
-Sampling 多样性不自动等于[认知不确定性（Epistemic Uncertainty）](../foundations/epistemic-aleatoric.md)。Farquhar et al. (2024) 的工作说明含义变化可以帮助识别一类错误，同时保留持续同错这一盲区。当前研究需要比较不同分歧信号在具体任务中能发现什么，以及它们遗漏了哪些稳定错误。
+Sampling 多样性不自动等于[认知不确定性（Epistemic Uncertainty）](../foundations/epistemic-aleatoric.md)。[Farquhar et al. (2024)](https://www.nature.com/articles/s41586-024-07421-0 "文献引用") 的工作说明含义变化可以帮助识别一类错误，同时保留持续同错这一盲区。当前研究需要比较不同分歧信号在具体任务中能发现什么，以及它们遗漏了哪些稳定错误。
 
-## 参考文献（References）
+## 参考文献
 
 - Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E. H., Narang, S., Chowdhery, A., Zhou, D. (2023). *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. ICLR. [作者会议版本](https://arxiv.org/abs/2203.11171v4)
 - Kuhn, L., Gal, Y., Farquhar, S. (2023). *Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation*. ICLR. [作者会议版本](https://arxiv.org/abs/2302.09664v3)

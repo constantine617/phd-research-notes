@@ -7,7 +7,7 @@ tags:
 
 # 期望校准误差（Expected Calibration Error，ECE）
 
-ECE 把预测分数分箱，比较每箱平均置信度（Confidence）与平均正确率，再按样本数加权。本页采用 Guo et al. (2017) 中常见的预测正确性校准形式：每条样本只有一个置信度和一个正确标签。
+ECE 把预测分数分箱，比较每箱平均置信度与平均正确率，再按样本数加权。本页采用 [Guo et al. (2017)](https://proceedings.mlr.press/v70/guo17a.html "文献引用") 中常见的预测正确性校准形式：每条样本只有一个置信度和一个正确标签。
 
 ## 分箱计算
 
@@ -43,15 +43,15 @@ $\widehat{\operatorname{ECE}}$ 为样本分箱估计，空箱不贡献项。它�
 
 ## 主要局限
 
-Nixon et al. (2020) 分析分箱、只看最高类别概率、类别条件评价等选择对结论的影响。本页引用其 2020 修订预印本，不将其版本作者列表混同于早期版本。
+[Nixon et al. (2020)](https://arxiv.org/abs/1904.01685v2 "文献引用") 分析分箱、只看最高类别概率、类别条件评价等选择对结论的影响。本页引用其 2020 修订预印本，不将其版本作者列表混同于早期版本。
 
 宽箱可能让箱内过度自信与不够自信相互抵消。样本跨越固定边界时，估计可能发生跳变，因而该指标对分箱边界不连续。总体低 ECE 也可能掩盖某个领域、少数类别或困难问题上的失准。只评价最高类别置信度，不能保证整个多类概率向量已校准。
 
-在开放生成中，首先固定“正确”的规则与回答版本。若 $c_i$ 只是任意不确定性量化（Uncertainty Quantification，UQ）分数，应先在独立数据上建立概率映射；随意缩放到 $[0,1]$ 并不赋予其正确概率含义。
+在开放生成中，首先固定“正确”的规则与回答版本。若 $c_i$ 只是任意 UQ 分数，应先在独立数据上建立概率映射；随意缩放到 $[0,1]$ 并不赋予其正确概率含义。
 
 解释结果时同时看可靠性图、箱内样本量、[Brier Score](brier-score.md)与任务准确率，避免只根据单个 ECE 选择系统。
 
-## 参考文献（References）
+## 参考文献
 
 - Guo, C., Pleiss, G., Sun, Y., Weinberger, K. Q. (2017). *On Calibration of Modern Neural Networks*. ICML, Proceedings of Machine Learning Research, 70, 1321–1330. [Paper](https://proceedings.mlr.press/v70/guo17a.html)
 - Nixon, J., Dusenberry, M., Jerfel, G., Nguyen, T., Liu, J., Zhang, L., Tran, D. (2020). *Measuring Calibration in Deep Learning*. arXiv:1904.01685v2；首版 2019，本页使用 2020 修订版. [Paper](https://arxiv.org/abs/1904.01685v2)

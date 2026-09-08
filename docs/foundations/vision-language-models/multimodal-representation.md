@@ -33,17 +33,17 @@ $j$ 是文本 token 位置，$d_t$ 是文本表示维度，$\mathbf{t}_j$ 可以
 
 ## 共享空间与连接空间
 
-一种方式是把两种表示映射到可直接比较的共同空间。Radford et al. (2021) 的对比语言图像预训练（Contrastive Language–Image Pre-training，CLIP）分别编码图像和文本，再将整体表示投影到共同空间进行匹配。
+一种方式是把两种表示映射到可直接比较的共同空间。[Radford et al. (2021)](https://proceedings.mlr.press/v139/radford21a.html "文献引用") 的CLIP分别编码图像和文本，再将整体表示投影到共同空间进行匹配。
 
-另一种方式是让视觉信息成为大语言模型（Large Language Model，LLM）的条件。Liu et al. (2023) 使用视觉特征投影构造语言侧可接收的输入。这里的目标是支持后续计算和生成，不要求把所有中间表示都转换为同一个可直接比较的语义向量。
+另一种方式是让视觉信息成为 LLM 的条件。[Liu et al. (2023)](https://proceedings.neurips.cc/paper_files/paper/2023/hash/6dcf277ea32ce3288914faf369fe6de0-Abstract-Conference.html "文献引用") 使用视觉特征投影构造语言侧可接收的输入。这里的目标是支持后续计算和生成，不要求把所有中间表示都转换为同一个可直接比较的语义向量。
 
-因此，视觉语言模型（Vision-Language Model，VLM）需要建立可比较或可交互的接口，但不必让所有层、所有模态都共享完全相同的空间。即使两个向量维度相同，未经适当训练，也不能仅凭余弦相似度认定它们语义相近。
+因此，VLM 需要建立可比较或可交互的接口，但不必让所有层、所有模态都共享完全相同的空间。即使两个向量维度相同，未经适当训练，也不能仅凭余弦相似度认定它们语义相近。
 
 ## 融合意味着信息参与共同计算
 
 多模态融合（Multimodal Fusion）是让不同模态的信息共同影响表示、分数或输出。它可以发生在输入组织、中间特征交互或结果组合等位置；这些描述只表示融合位置，不构成所有模型唯一的分类法。
 
-例如，把视觉向量和文本 embedding 放入共同序列，后续层可以处理两者的联系；也可以让一组查询通过跨注意力（Cross-Attention）读取视觉特征。Li et al. (2023) 的 BLIP-2 提供了后一种交互的实例。
+例如，把视觉向量和文本 embedding 放入共同序列，后续层可以处理两者的联系；也可以让一组查询通过跨注意力读取视觉特征。[Li et al. (2023)](https://proceedings.mlr.press/v202/li23q.html "文献引用") 的 BLIP-2 提供了后一种交互的实例。
 
 拼接只是提供交互机会，并不保证每个位置都得到有效利用。比较两个已独立计算的整体向量，也与在中间层让细粒度特征相互作用不同。阅读论文时，应说明交互发生在哪里、参与交互的单位是什么，而不是只写“进行了融合”。
 
@@ -59,9 +59,9 @@ $j$ 是文本 token 位置，$d_t$ 是文本表示维度，$\mathbf{t}_j$ 可以
 
 表征为后续 [跨模态对齐](cross-modal-alignment.md) 提供计算对象，也为 [视觉定位](visual-grounding.md) 提供可能的区域和特征基础。但有表示、可匹配和有证据支持，是逐步增加要求的不同判断。
 
-对不确定性量化（Uncertainty Quantification，UQ），内部表示可以作为研究输入，帮助检验模型是否保留并利用了相关视觉信息。当前不预设哪一层、哪一种表示最好，也不将表示维度或融合复杂度直接当作可靠性指标。语言侧 hidden state 的基础见 [内部表征](../language-models/hidden-representations.md)。
+对 UQ，内部表示可以作为研究输入，帮助检验模型是否保留并利用了相关视觉信息。当前不预设哪一层、哪一种表示最好，也不将表示维度或融合复杂度直接当作可靠性指标。语言侧 hidden state 的基础见 [内部表征](../language-models/hidden-representations.md)。
 
-## 参考文献（References）
+## 参考文献
 
 - Radford, A., Kim, J. W., Hallacy, C., et al. (2021). *Learning Transferable Visual Models From Natural Language Supervision*. Proceedings of the 38th International Conference on Machine Learning, PMLR 139, 8748–8763. [Paper](https://proceedings.mlr.press/v139/radford21a.html)
 - Liu, H., Li, C., Wu, Q., Lee, Y. J. (2023). *Visual Instruction Tuning*. Advances in Neural Information Processing Systems, 36, 34892–34916. [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/6dcf277ea32ce3288914faf369fe6de0-Abstract-Conference.html)

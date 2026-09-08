@@ -27,7 +27,7 @@ $x$ 是可能结果，$H(p,q)$ 表示按 $p$ 加权的负对数预测概率，�
 
 ## 与熵及分布差异的关系
 
-记 $H(p)$ 为目标分布的熵，$D_{\mathrm{KL}}(p\|q)$ 为 KL 散度（Kullback–Leibler Divergence，KL Divergence）。当 $q$ 在 $p$ 的正概率结果上也为正时：
+记 $H(p)$ 为目标分布的熵，$D_{\mathrm{KL}}(p\|q)$ 为 KL。当 $q$ 在 $p$ 的正概率结果上也为正时：
 
 $$
 H(p,q)=H(p)+D_{\mathrm{KL}}(p\|q)
@@ -35,7 +35,7 @@ H(p,q)=H(p)+D_{\mathrm{KL}}(p\|q)
 \label{eq:cross-entropy-decomposition}
 $$
 
-这一关系可由在式 $\eqref{eq:cross-entropy-definition}$ 中加上并减去 $\sum_x p(x)\log p(x)$ 直接得到。$H(p)$ 描述目标自身的不确定性，散度项描述预测分布与目标的差异。相关标准定义见 Goodfellow et al. (2016)，散度的性质见 [KL 散度](kl-divergence.md)。
+这一关系可由在式 $\eqref{eq:cross-entropy-definition}$ 中加上并减去 $\sum_x p(x)\log p(x)$ 直接得到。$H(p)$ 描述目标自身的不确定性，散度项描述预测分布与目标的差异。相关标准定义见 [Goodfellow et al. (2016)](https://www.deeplearningbook.org/ "文献引用")，散度的性质见 [KL 散度](kl-divergence.md)。
 
 固定 $p$ 时，$H(p)$ 是常数，因此最小化交叉熵等价于最小化这个方向的散度；若允许任意预测分布，最小值在 $q=p$ 时达到。受限模型未必能够表示 $p$，实际训练也未必找到全局最优。
 
@@ -61,17 +61,17 @@ $q(y)$ 是模型赋给观察类别的概率。比如，同一标签在两个预�
 
 ## 与语言模型训练的关系
 
-大语言模型（Large Language Model，LLM）进行 next-token 训练时，可把数据中的下一个 token 作为 one-hot 标签，把当前上下文下的 vocabulary 分布作为预测分布。每个有效位置因此产生式 $\eqref{eq:cross-entropy-one-hot}$ 形式的损失，再按训练约定聚合。神经语言模型使用观测序列训练条件概率的基础可参见 Bengio et al. (2003)。
+LLM 进行 next-token 训练时，可把数据中的下一个 token 作为 one-hot 标签，把当前上下文下的 vocabulary 分布作为预测分布。每个有效位置因此产生式 $\eqref{eq:cross-entropy-one-hot}$ 形式的损失，再按训练约定聚合。神经语言模型使用观测序列训练条件概率的基础可参见 [Bengio et al. (2003)](https://www.jmlr.org/papers/v3/bengio03a.html "文献引用")。
 
 这里的上下文通常包含数据中的前缀；它与 inference 时模型自行生成的前缀可能不同。比较训练损失与生成回答分数时，需要先说明两者使用了什么上下文，而不是仅因为表达式都含有 $-\log q(y)$ 就视为同一测量。
 
-## 与负对数似然的边界
+## 交叉熵与 NLL 何时相等？
 
-负对数似然（Negative Log-Likelihood，NLL）从观测数据的似然出发。对相同模型、one-hot 观测标签、相同位置权重及相同求和或平均方式，交叉熵损失与 NLL 可以相等。使用软标签、不同 mask 或不同归一化后，不能不加条件地沿用这个等式。
+NLL 从观测数据的似然出发。对相同模型、one-hot 观测标签、相同位置权重及相同求和或平均方式，交叉熵损失与 NLL 可以相等。使用软标签、不同 mask 或不同归一化后，不能不加条件地沿用这个等式。
 
-交叉熵衡量目标分布下的平均预测损失；它不是模型自己的熵，也不是一个已生成回答的事实正确率。后续将其用于不确定性量化（Uncertainty Quantification，UQ）时，仍需说明标签和可靠性目标之间的关系。序列聚合与长度处理见 [负对数似然](negative-log-likelihood.md)。
+交叉熵衡量目标分布下的平均预测损失；它不是模型自己的熵，也不是一个已生成回答的事实正确率。后续将其用于 UQ 时，仍需说明标签和可靠性目标之间的关系。序列聚合与长度处理见 [负对数似然](negative-log-likelihood.md)。
 
-## 参考文献（References）
+## 参考文献
 
 - Goodfellow, I., Bengio, Y., Courville, A. (2016). *Deep Learning*. MIT Press. [Book](https://www.deeplearningbook.org/)
 - Bengio, Y., Ducharme, R., Vincent, P., Jauvin, C. (2003). *A Neural Probabilistic Language Model*. Journal of Machine Learning Research, 3, 1137–1155. [Paper](https://www.jmlr.org/papers/v3/bengio03a.html)

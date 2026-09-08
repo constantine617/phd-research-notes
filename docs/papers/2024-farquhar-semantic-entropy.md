@@ -8,7 +8,7 @@ tags:
 
 # Detecting hallucinations in large language models using semantic entropy
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, Yarin Gal。
 - 年份：2024。
@@ -19,7 +19,7 @@ tags:
 
 ## 研究问题与方法
 
-Farquhar et al. (2024)研究大语言模型（Large Language Model，LLM）的一类幻觉：模型在多次生成中给出语义上不稳定的错误内容，文中称为 confabulation。论文并未声称用语义熵（Semantic Entropy）覆盖所有错误或全部幻觉成因。
+[Farquhar et al. (2024)](https://doi.org/10.1038/s41586-024-07421-0 "文献引用")研究 LLM 的一类幻觉：模型在多次生成中给出语义上不稳定的错误内容，文中称为 confabulation。论文并未声称用语义熵覆盖所有错误或全部幻觉成因。
 
 基本流程是针对问题生成多个答案，判断答案之间的语义关系，将表达同一含义的答案聚类，再计算语义类分布的不确定性。论文也使用基于样本频数的离散估计，使无法获取 token 概率的模型可以采用该思路。
 
@@ -43,14 +43,14 @@ Farquhar et al. (2024)研究大语言模型（Large Language Model，LLM）的�
 
 ## 与博士研究主线的关系
 
-这篇论文连接幻觉定义、语义不确定性量化（Uncertainty Quantification，UQ）和选择性预测。后续效率研究可以近似其中的昂贵信号，但必须分别报告代理信号拟合质量和真实错误检测质量。
+这篇论文连接幻觉定义、语义 UQ 和选择性预测。后续效率研究可以近似其中的昂贵信号，但必须分别报告代理信号拟合质量和真实错误检测质量。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [语义熵知识页](../uncertainty/sampling-based/semantic-entropy.md)
 - [幻觉标签](../evaluation/ground-truth/hallucination-labels.md)
 - [语义熵探针](2024-kossen-semantic-entropy-probes.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Farquhar, S., Kossen, J., Kuhn, L., Gal, Y. (2024). *Detecting hallucinations in large language models using semantic entropy*. Nature, 630, 625–630. [原文](https://doi.org/10.1038/s41586-024-07421-0)

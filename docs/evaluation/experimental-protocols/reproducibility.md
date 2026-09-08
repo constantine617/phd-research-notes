@@ -6,13 +6,13 @@ tags:
 
 # 可复现性（Reproducibility）
 
-可复现记录应让另一位研究者能够确定实验输入、实际过程和输出来源。保存一个随机种子或最终分数远远不够。模型与数据文档可分别参考 Mitchell et al. (2019) 和 Gebru et al. (2021) 的记录框架。
+可复现记录应让另一位研究者能够确定实验输入、实际过程和输出来源。保存一个随机种子或最终分数远远不够。模型与数据文档可分别参考 [Mitchell et al. (2019)](https://doi.org/10.1145/3287560.3287596 "文献引用") 和 [Gebru et al. (2021)](https://doi.org/10.1145/3458723 "文献引用") 的记录框架。
 
 ## 最小记录包
 
 保存模型与 tokenizer 版本、依赖包版本、硬件与数值精度、完整 prompt、decoding 设置、种子、数据版本和划分清单。记录预处理、答案提取、异常样本排除、标签构建、评价脚本与指标约定。
 
-对于应用程序接口（Application Programming Interface，API），保留调用日期、模型标识、可用 snapshot、原始返回值、失败重试与限流处理。服务没有提供固定 snapshot 时，应明确这一限制。
+对于 API，保留调用日期、模型标识、可用 snapshot、原始返回值、失败重试与限流处理。服务没有提供固定 snapshot 时，应明确这一限制。
 
 缓存应能够追溯到输入及配置。修改 prompt 或模型后，不可误用旧输出；可以通过内容摘要和配置标识检查对应关系。为了保护数据和遵守使用条款，不是所有原始输出都适合公开，公开包与受控保存记录应分开。
 
@@ -28,7 +28,7 @@ tags:
 
 最终记录应包括成功条件与已知限制。若改了评价规则，应保留旧版本及变化原因，避免把规则变化误报为模型性能提升。
 
-## 参考文献（References）
+## 参考文献
 
 - Mitchell, M., Wu, S., Zaldivar, A., et al. (2019). *Model Cards for Model Reporting*. FAT*, 220–229. [Paper](https://doi.org/10.1145/3287560.3287596) · [作者版本](https://arxiv.org/abs/1810.03993)
 - Gebru, T., Morgenstern, J., Vecchione, B., et al. (2021). *Datasheets for Datasets*. Communications of the ACM, 64(12), 86–92. [Paper](https://doi.org/10.1145/3458723) · [作者预印本](https://arxiv.org/abs/1803.09010)

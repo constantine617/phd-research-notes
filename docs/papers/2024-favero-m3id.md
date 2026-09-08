@@ -9,7 +9,7 @@ tags:
 
 # Multi-Modal Hallucination Control by Visual Information Grounding
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Alessandro Favero, Luca Zancato, Matthew Trager, Siddharth Choudhary, Pramuditha Perera, Alessandro Achille, Ashwin Swaminathan, Stefano Soatto。
 - 年份：2024。
@@ -21,7 +21,7 @@ tags:
 
 ## 研究问题与方法
 
-Favero et al. (2024)研究大型视觉语言模型（Large Vision-Language Model，LVLM）在生成过程中对图像信息的依赖。作者比较有图像与无图像条件下的下一 token 分布，构造提示依赖度量（Prompt Dependency Measure，PDM），主要使用 Hellinger 距离。
+[Favero et al. (2024)](https://openaccess.thecvf.com/content/CVPR2024/html/Favero_Multi-Modal_Hallucination_Control_by_Visual_Information_Grounding_CVPR_2024_paper.html "文献引用")研究 LVLM 在生成过程中对图像信息的依赖。作者比较有图像与无图像条件下的下一 token 分布，构造提示依赖度量（Prompt Dependency Measure，PDM），主要使用 Hellinger 距离。
 
 这种依赖度量并不把“低图像依赖”直接定义成幻觉。语法 token 可以不依赖图像，已经写进前缀的视觉事实也会降低后续 token 对图像的额外依赖；论文将后者与上下文压力联系起来。
 
@@ -47,12 +47,12 @@ Favero et al. (2024)研究大型视觉语言模型（Large Vision-Language Model
 
 该论文为视觉证据利用与幻觉缓解提供方法实例，也帮助区分检测、校准和生成干预。后续使用图像依赖分数时，应独立检验其与错误、视觉支持及内容覆盖的关系。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [Grounding 与可信性](../multimodal/grounding-for-trustworthiness.md)
 - [幻觉缓解](../hallucination/mitigation.md)
 - [视觉支持与置信度](../multimodal/grounding-based-confidence.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Favero, A., Zancato, L., Trager, M., Choudhary, S., Perera, P., Achille, A., Swaminathan, A., Soatto, S. (2024). *Multi-Modal Hallucination Control by Visual Information Grounding*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 14303–14312. [原文](https://openaccess.thecvf.com/content/CVPR2024/html/Favero_Multi-Modal_Hallucination_Control_by_Visual_Information_Grounding_CVPR_2024_paper.html)

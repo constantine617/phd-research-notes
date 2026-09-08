@@ -6,13 +6,13 @@ tags:
 
 # 置信度与不确定性（Confidence vs Uncertainty）
 
-置信度表达对一个明确事件或预测的把握程度，不确定性描述某种尚未确定的程度。二者常常相关，但其数值关系取决于定义。对于大语言模型（Large Language Model，LLM）的不确定性量化（Uncertainty Quantification，UQ），首先要确认分数针对的是哪个对象，然后才讨论大小方向与概率解释。
+置信度表达对一个明确事件或预测的把握程度，不确定性描述某种尚未确定的程度。二者常常相关，但其数值关系取决于定义。对于 LLM 的 UQ，首先要确认分数针对的是哪个对象，然后才讨论大小方向与概率解释。
 
 ## 相似名称可能对应不同事件
 
-基于概率的置信度（Probability-based Confidence）可能取自已选 token 概率、某个候选答案概率或序列分数。语言自报置信度（Verbalized Confidence）是模型通过文字或数字报告的把握程度。经过校准的置信度（Calibrated Confidence）则应在指定目标和群体上接受频率匹配的检验。
+基于概率的置信度（Probability-based Confidence）可能取自已选 token 概率、某个候选答案概率或序列分数。语言自报置信度是模型通过文字或数字报告的把握程度。经过校准的置信度（Calibrated Confidence）则应在指定目标和群体上接受频率匹配的检验。
 
-例如，模型给回答附上“80%”，这个数字是文本内容；生成字符“80%”的 token 概率，是产生该表达的概率。后者并不自动说明回答正确的概率是八成。Lin et al. (2022) 将语言表达的概率与从 logits 获取的概率分别研究，正是为了区分这两种对象。
+例如，模型给回答附上“80%”，这个数字是文本内容；生成字符“80%”的 token 概率，是产生该表达的概率。后者并不自动说明回答正确的概率是八成。[Lin et al. (2022)](https://arxiv.org/abs/2205.14334 "文献引用") 将语言表达的概率与从 logits 获取的概率分别研究，正是为了区分这两种对象。
 
 不确定性分数还可能是熵、距离或分类器输出。熵的单位和范围与结果空间及对数底有关；距离通常依赖特征尺度；分类器的数值又依赖训练目标。不能仅因都画成一条曲线，就把它们当作同一尺度上的量。
 
@@ -38,16 +38,16 @@ tags:
 
 ## 排序与校准分别回答什么
 
-Geng et al. (2024) 区分相对置信度与绝对概率解释。前者关心哪些回答更值得怀疑；后者还要求“八成”在相应预测群体中接近八成正确。[置信度校准（Confidence Calibration）](../../calibration/index.md)讨论后一种关系，其经典依据见 Guo et al. (2017)。
+[Geng et al. (2024)](https://aclanthology.org/2024.naacl-long.366/ "文献引用") 区分相对置信度与绝对概率解释。前者关心哪些回答更值得怀疑；后者还要求“八成”在相应预测群体中接近八成正确。[置信度校准（Confidence Calibration）](../../calibration/index.md)讨论后一种关系，其经典依据见 [Guo et al. (2017)](https://proceedings.mlr.press/v70/guo17a.html "文献引用")。
 
 当前研究记录每个信号时，应给出目标事件、取值范围、分数方向和转换过程。对“高分”先问它代表更分散、更常见还是更可能正确，能避免许多比较错误。若多个分数方向一致但对象不同，仍需分别解释，不能直接求平均并称其为综合正确概率。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [基于概率的 UQ](../probability-based/index.md)
 - [语言自报置信度](../verbal-confidence/index.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Lin, S., Hilton, J., Evans, O. (2022). *Teaching Models to Express Their Uncertainty in Words*. Transactions on Machine Learning Research. [作者版本](https://arxiv.org/abs/2205.14334)
 - Geng, J., Cai, F., Wang, Y., Koeppl, H., Nakov, P., Gurevych, I. (2024). *A Survey of Confidence Estimation and Calibration in Large Language Models*. NAACL-HLT, 6577–6595. [Paper](https://aclanthology.org/2024.naacl-long.366/)

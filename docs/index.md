@@ -3,7 +3,7 @@ tags:
   - research-overview
 ---
 
-# 博士研究笔记（PhD Research Notes）
+# 博士研究笔记
 
 本知识库围绕可信大语言模型（Large Language Model，LLM）与大型视觉语言模型（Large Vision-Language Model，LVLM），整理幻觉、输出可靠性、多模态证据及医学应用研究。当前主要技术主线是不确定性量化（Uncertainty Quantification，UQ）。
 

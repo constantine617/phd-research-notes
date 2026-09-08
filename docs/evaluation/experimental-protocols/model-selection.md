@@ -5,13 +5,13 @@ tags:
   - reproducibility
 ---
 
-# 模型选择（Model Selection）
+# 模型选择
 
-模型选择应服务于研究问题与信息需求。比较大语言模型（Large Language Model，LLM）或大型视觉语言模型（Large Vision-Language Model，LVLM）时，仅写模型家族名称无法定位实际实验对象。
+模型选择应服务于研究问题与信息需求。比较 LLM 或 LVLM 时，仅写模型家族名称无法定位实际实验对象。
 
 ## 建立模型记录
 
-Mitchell et al. (2019) 的 Model Cards 提供记录模型版本、设计用途、评价条件与群体差异的框架。研究实验可进一步明确：
+[Mitchell et al. (2019)](https://doi.org/10.1145/3287560.3287596 "文献引用") 的 Model Cards 提供记录模型版本、设计用途、评价条件与群体差异的框架。研究实验可进一步明确：
 
 - 家族、参数规模、发布者、发布日期与精确 checkpoint。
 - 基础模型还是经过指令 fine-tuning 的模型，是否还有其他训练阶段。
@@ -33,6 +33,6 @@ Mitchell et al. (2019) 的 Model Cards 提供记录模型版本、设计用途�
 
 模型版本变化可能同时改变基础错误率和置信度分布。重新比较时应保存旧结果，并重新检查校准与阈值；不可将不同版本结果拼成一个看似同时完成的实验。
 
-## 参考文献（References）
+## 参考文献
 
 - Mitchell, M., Wu, S., Zaldivar, A., et al. (2019). *Model Cards for Model Reporting*. FAT*, 220–229. [Paper](https://doi.org/10.1145/3287560.3287596) · [作者版本](https://arxiv.org/abs/1810.03993)

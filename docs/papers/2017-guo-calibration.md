@@ -7,7 +7,7 @@ tags:
 
 # On Calibration of Modern Neural Networks
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Chuan Guo, Geoff Pleiss, Yu Sun, Kilian Q. Weinberger。
 - 年份：2017。
@@ -18,7 +18,7 @@ tags:
 
 ## 研究问题与方法
 
-Guo et al. (2017)研究分类神经网络的置信度校准（Confidence Calibration）：softmax 最大概率与预测正确频率是否一致。论文比较不同模型的校准表现，并检验能否在训练完成后，用一组独立验证数据修正概率输出。
+[Guo et al. (2017)](https://proceedings.mlr.press/v70/guo17a.html "文献引用")研究分类神经网络的置信度校准（Confidence Calibration）：softmax 最大概率与预测正确频率是否一致。论文比较不同模型的校准表现，并检验能否在训练完成后，用一组独立验证数据修正概率输出。
 
 核心方法是温度缩放（Temperature Scaling）。作者冻结分类器，只在验证集上拟合一个正温度参数，以最小化负对数似然（Negative Log-Likelihood，NLL）。它统一缩放每个样本的 logits，再计算 softmax；不会改变该样本的最大类别及分类准确率。
 
@@ -38,18 +38,18 @@ Guo et al. (2017)研究分类神经网络的置信度校准（Confidence Calibra
 
 本笔记的理解是，部署该方法前要先明确验证集代表什么分布。论文主要处于训练、验证与测试分布相近的分类设置，不能据此保证分布变化后的校准。保持类别 argmax 也不意味着多分类样本之间的置信度排序一定不变。
 
-温度缩放无法修正事实内容，也没有解决开放生成中“哪个事件的概率应被校准”。将它用于大语言模型（Large Language Model，LLM）时，必须另行定义答案正确事件、概率输入与监督标签。
+温度缩放无法修正事实内容，也没有解决开放生成中“哪个事件的概率应被校准”。将它用于 LLM 时，必须另行定义答案正确事件、概率输入与监督标签。
 
 ## 与博士研究主线的关系
 
-这篇论文适合作为概率校准实验的基础基线和报告规范来源。对新的不确定性量化（Uncertainty Quantification，UQ）信号，应分别检查错误排序和校准；只证明 ECE 降低，不能推出幻觉检测能力提高。通用公式与校准条件见下列知识页。
+这篇论文适合作为概率校准实验的基础基线和报告规范来源。对新的 UQ 信号，应分别检查错误排序和校准；只证明 ECE 降低，不能推出幻觉检测能力提高。通用公式与校准条件见下列知识页。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [校准方法](../calibration/calibration-methods.md)
 - [后处理校准](../calibration/post-hoc-calibration.md)
 - [ECE](../evaluation/calibration-metrics/expected-calibration-error.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Guo, C., Pleiss, G., Sun, Y., Weinberger, K. Q. (2017). *On Calibration of Modern Neural Networks*. ICML, Proceedings of Machine Learning Research, 70, 1321–1330. [原文](https://proceedings.mlr.press/v70/guo17a.html)

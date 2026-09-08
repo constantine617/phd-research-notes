@@ -9,7 +9,7 @@ tags:
 
 # FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Sewon Min, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang Wei Koh, Mohit Iyyer, Luke Zettlemoyer, Hannaneh Hajishirzi。
 - 年份：2023。
@@ -21,7 +21,7 @@ tags:
 
 ## 研究问题与方法
 
-Min et al. (2023)研究长文本生成的事实精确度（Factual Precision）。一篇回答可能同时包含有支持和无支持的内容，将整篇标成正确或错误会丢失这些差异。
+[Min et al. (2023)](https://aclanthology.org/2023.emnlp-main.741/ "文献引用")研究长文本生成的事实精确度（Factual Precision）。一篇回答可能同时包含有支持和无支持的内容，将整篇标成正确或错误会丢失这些差异。
 
 FActScore 将回答拆成原子事实，判断每条事实是否受到指定知识源支持，计算回答内部的支持比例，再汇总模型在作答样本上的平均比例。它关注已经说出的事实中有多少得到支持，不直接测量该说而未说的内容。
 
@@ -45,14 +45,14 @@ FActScore 将回答拆成原子事实，判断每条事实是否受到指定知�
 
 ## 与博士研究主线的关系
 
-这篇论文为证据支持标签和长文本评价提供具体范例。将其用于不确定性量化（Uncertainty Quantification，UQ）或幻觉检测时，需要区分人工支持标签、自动评分器输出和模型自身置信度。
+这篇论文为证据支持标签和长文本评价提供具体范例。将其用于 UQ 或幻觉检测时，需要区分人工支持标签、自动评分器输出和模型自身置信度。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [事实性](../hallucination/factuality.md)
 - [外部证据 UQ](../uncertainty/evidence-aware/index.md)
 - [幻觉标签](../evaluation/ground-truth/hallucination-labels.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Min, S., Krishna, K., Lyu, X., Lewis, M., Yih, W., Koh, P. W., Iyyer, M., Zettlemoyer, L., Hajishirzi, H. (2023). *FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation*. EMNLP, 12076–12100. [原文](https://aclanthology.org/2023.emnlp-main.741/)

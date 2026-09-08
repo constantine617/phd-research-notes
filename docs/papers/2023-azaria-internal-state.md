@@ -8,7 +8,7 @@ tags:
 
 # The Internal State of an LLM Knows When It’s Lying
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Amos Azaria, Tom Mitchell。
 - 年份：2023。
@@ -19,7 +19,7 @@ tags:
 
 ## 研究问题与方法
 
-Azaria and Mitchell (2023)研究大语言模型（Large Language Model，LLM）的内部表征：一句陈述输入模型后，hidden state 是否含有可用于判别陈述真假的信息。
+[Azaria and Mitchell (2023)](https://aclanthology.org/2023.findings-emnlp.68/ "文献引用")研究 LLM 的内部表征：一句陈述输入模型后，hidden state 是否含有可用于判别陈述真假的信息。
 
 论文提出基于语言模型激活的陈述准确性预测（Statement Accuracy Prediction, based on Language Model Activations，SAPLMA）。作者冻结语言模型，在抽取的层表征上训练监督分类器。分类器是具有三个隐藏层的多层感知机（Multilayer Perceptron，MLP），不是线性探针。
 
@@ -43,14 +43,14 @@ Azaria and Mitchell (2023)研究大语言模型（Large Language Model，LLM）�
 
 ## 与博士研究主线的关系
 
-这篇论文是表征不确定性量化（Uncertainty Quantification，UQ）的重要证据，但其训练目标是陈述真假。它可以与预测高语义熵的探针对照，以区分“监督正确性信号”和“对另一种不确定性信号的代理”。
+这篇论文是表征 UQ 的重要证据，但其训练目标是陈述真假。它可以与预测高语义熵的探针对照，以区分“监督正确性信号”和“对另一种不确定性信号的代理”。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [hidden state 不确定性](../representation-uq/hidden-state-uncertainty.md)
 - [语义熵探针](2024-kossen-semantic-entropy-probes.md)
 - [正确性定义](../evaluation/ground-truth/correctness-definition.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Azaria, A., Mitchell, T. (2023). *The Internal State of an LLM Knows When It’s Lying*. Findings of EMNLP, 967–976. [原文](https://aclanthology.org/2023.findings-emnlp.68/)

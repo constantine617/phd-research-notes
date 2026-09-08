@@ -5,11 +5,11 @@ tags:
   - uq
 ---
 
-# 效率指标（Efficiency Metrics）
+# 效率指标
 
-不确定性量化（Uncertainty Quantification，UQ）的成本应覆盖从输入到最终分数的全部过程，包括回答生成、额外 sampling、验证与证据处理。只报告估计器最后一步的耗时，可能隐藏主要开销。
+UQ 的成本应覆盖从输入到最终分数的全部过程，包括回答生成、额外 sampling、验证与证据处理。只报告估计器最后一步的耗时，可能隐藏主要开销。
 
-Fadeeva et al. (2023) 的 LM-Polygraph 将多类生成式 UQ 方法置于统一接口中，说明比较时还要考虑所需模型信息及附加计算。本页据此组织成本记录，不把以下记录表归为论文提出的统一指标。
+[Fadeeva et al. (2023)](https://aclanthology.org/2023.emnlp-demo.41/ "文献引用") 的 LM-Polygraph 将多类生成式 UQ 方法置于统一接口中，说明比较时还要考虑所需模型信息及附加计算。本页据此组织成本记录，不把以下记录表归为论文提出的统一指标。
 
 ## 至少记录哪些成本
 
@@ -34,12 +34,12 @@ Fadeeva et al. (2023) 的 LM-Polygraph 将多类生成式 UQ 方法置于统一�
 
 在相同预算下比较错误识别或选择性表现，也可展示不同预算的效果变化。额外训练的探针应单列训练成本及所需标签，不能因测试时只读一次 hidden state 就称为完全无成本。
 
-冷缓存与热缓存结果分开；工具失败和重试计入端到端成本。若不能测得闭源接口内部 FLOPs 或显存，就报告可观察量与访问限制。
+冷缓存与热缓存结果分开；工具失败和重试计入端到端成本。若不能测得闭源接口内部 浮点运算数 或显存，就报告可观察量与访问限制。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [高效 UQ](../efficient-uq/index.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Fadeeva, E., Vashurin, R., Tsvigun, A., et al. (2023). *LM-Polygraph: Uncertainty Estimation for Language Models*. EMNLP: System Demonstrations, 446–461. [Paper](https://aclanthology.org/2023.emnlp-demo.41/)

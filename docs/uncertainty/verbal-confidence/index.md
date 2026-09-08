@@ -6,7 +6,7 @@ tags:
 
 # 语言自报置信度（Verbal Confidence）
 
-语言自报置信度指模型用自然语言或数字表达对某个回答的把握程度；文献中也称 Verbalized Confidence。对大语言模型（Large Language Model，LLM）的不确定性量化（Uncertainty Quantification，UQ）而言，这是一类可通过文本接口取得的信号；它不等于 token 概率，也不自动等于经过校准的置信度。
+语言自报置信度指模型用自然语言或数字表达对某个回答的把握程度；文献中也称 Verbalized Confidence。对 LLM 的 UQ 而言，这是一类可通过文本接口取得的信号；它不等于 token 概率，也不自动等于经过校准的置信度。
 
 ## 表达形式与所问事件
 
@@ -14,15 +14,15 @@ tags:
 
 数值置信度（Numeric Confidence）只是输出格式。让模型多写几位小数，并不会增加它对概率的理解或校准程度。自报概率（Self-reported Probability）也可能集中在少数常见档位，造成大量同分样本，限制后续排序能力。
 
-询问对象必须明确：是刚生成的具体回答完全正确，还是“如果重新回答，大概能否答对”？是符合世界事实，还是得到指定文档支持？Kadavath et al. (2022) 对具体回答自评与问题级可回答性作了区分，不能把后者的分数无条件附在任意当前回答上。
+询问对象必须明确：是刚生成的具体回答完全正确，还是“如果重新回答，大概能否答对”？是符合世界事实，还是得到指定文档支持？[Kadavath et al. (2022)](https://arxiv.org/abs/2207.05221 "文献引用") 对具体回答自评与问题级可回答性作了区分，不能把后者的分数无条件附在任意当前回答上。
 
 ## 三种取得方式
 
 一种方式是在原回答后要求同时输出置信度，优点是格式直接，但这个要求本身可能改变答案生成。另一种方式是固定回答，再用独立 prompt 要求评分，更容易明确被评分对象，同时增加调用成本。第三种方式通过 fine-tuning 教模型表达更合适的概率。
 
-Lin et al. (2022) 研究第三种方式，在特定数学任务上训练模型用语言表达自身答案的不确定性，并比较了语言概率与 logits 信号。该结果不能直接解释为未经专门训练的任意模型都能自然输出准确概率。
+[Lin et al. (2022)](https://arxiv.org/abs/2205.14334 "文献引用") 研究第三种方式，在特定数学任务上训练模型用语言表达自身答案的不确定性，并比较了语言概率与 logits 信号。该结果不能直接解释为未经专门训练的任意模型都能自然输出准确概率。
 
-Tian et al. (2023) 则研究通过 prompt 从接受人类反馈 fine-tuning 的模型中获取置信度。在其部分模型和问答 benchmark 上，合适的自报策略改善了校准；先考虑多个候选答案也可帮助改善结果。其 Label prob. 基线通过多次 sampling、语义等价判断和众数答案选择构造，不能概括为直接读取 token 概率。比较还需考虑答案选择与调用预算，具体边界见[论文笔记](../../papers/2023-tian-verbal-confidence.md)。
+[Tian et al. (2023)](https://aclanthology.org/2023.emnlp-main.330/ "文献引用") 则研究通过 prompt 从接受人类反馈 fine-tuning 的模型中获取置信度。在其部分模型和问答 benchmark 上，合适的自报策略改善了校准；先考虑多个候选答案也可帮助改善结果。其 Label prob. 基线通过多次 sampling、语义等价判断和众数答案选择构造，不能概括为直接读取 token 概率。比较还需考虑答案选择与调用预算，具体边界见[论文笔记](../../papers/2023-tian-verbal-confidence.md)。
 
 ## Prompt 为什么会影响数值
 
@@ -30,7 +30,7 @@ Tian et al. (2023) 则研究通过 prompt 从接受人类反馈 fine-tuning 的�
 
 尺度使用同样重要。某模型把“可能”理解为中等把握，另一个可能用它作为礼貌措辞。跨语言或跨任务时，不宜沿用未经检验的词语概率表。数值解析还要区分百分比与小数，处理区间、多个数字、拒绝评分和格式错误。
 
-Xiong et al. (2024) 观察到其研究中的模型常自报过高置信度，且不同 prompting、sampling 和聚合策略没有在所有条件下一致胜出。这与 Tian et al. (2023) 的局部积极结果并不矛盾：模型、任务和对照信号不同，结论的适用范围也不同。
+[Xiong et al. (2024)](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6733cf15e10e2cd1d59af033c3bb8507-Abstract-Conference.html "文献引用") 观察到其研究中的模型常自报过高置信度，且不同 prompting、sampling 和聚合策略没有在所有条件下一致胜出。这与 [Tian et al. (2023)](https://aclanthology.org/2023.emnlp-main.330/ "文献引用") 的局部积极结果并不矛盾：模型、任务和对照信号不同，结论的适用范围也不同。
 
 ## 校准与独立核查
 
@@ -40,12 +40,12 @@ Xiong et al. (2024) 观察到其研究中的模型常自报过高置信度，且
 
 当前研究可以将 verbal confidence 作为文本接口下的基线，并与概率、sampling 分歧或证据信号互补。模型关于“我有把握”的陈述本身仍需要检验；流畅理由不是独立证据，辅助核查的调用和 token 也应计入成本。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [置信度与不确定性](../foundations/confidence-vs-uncertainty.md)
 - [校准方法](../../calibration/calibration-methods.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Kadavath, S., Conerly, T., Askell, A., et al. (2022). *Language Models (Mostly) Know What They Know*. arXiv:2207.05221. [Paper](https://arxiv.org/abs/2207.05221)
 - Lin, S., Hilton, J., Evans, O. (2022). *Teaching Models to Express Their Uncertainty in Words*. Transactions on Machine Learning Research. [作者版本](https://arxiv.org/abs/2205.14334)

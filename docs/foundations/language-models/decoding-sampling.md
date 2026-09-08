@@ -8,7 +8,7 @@ tags:
 
 # 解码与 Sampling（Decoding and Sampling）
 
-大语言模型（Large Language Model，LLM）给出下一个 token 的概率分布后，还需要决定实际输出哪一个 token。decoding 是完成这一选择并逐步形成序列的过程；sampling 是其中使用随机选择的一类方式。
+LLM 给出下一个 token 的概率分布后，还需要决定实际输出哪一个 token。decoding 是完成这一选择并逐步形成序列的过程；sampling 是其中使用随机选择的一类方式。
 
 本页用 $c_t$ 表示第 $t$ 步的上下文，用 $p$ 表示原始模型分布，用 $q$ 表示经过生成设置调整后、实际用于 sampling 的分布。关于 logits 与原始概率的关系，见[Token 与序列概率](token-sequence-probability.md)。
 
@@ -42,7 +42,7 @@ q_{\tau}(i\mid c_t)
 \label{eq:temperature-softmax}
 $$
 
-其中，$z_{t,i}$ 是第 $i$ 个 token 的原始 logit，$q_{\tau}$ 是调整后的分布。若没有其他生成调整，$\tau=1$ 时它等于原始模型分布。[Holtzman et al. (2020)](https://iclr.cc/virtual_2020/poster_rygGQyrFvH.html) 在比较文本生成策略时讨论了这种 temperature 调整。
+其中，$z_{t,i}$ 是第 $i$ 个 token 的原始 logit，$q_{\tau}$ 是调整后的分布。若没有其他生成调整，$\tau=1$ 时它等于原始模型分布。[Holtzman et al. (2020)](https://iclr.cc/virtual_2020/poster_rygGQyrFvH.html "文献引用") 在比较文本生成策略时讨论了这种 temperature 调整。
 
 - $0<\tau<1$：logits 之间的相对差异被放大，高 logit 候选占据更多概率质量，分布更集中。
 - $\tau=1$：保持原始 softmax 分布。
@@ -66,7 +66,7 @@ Top-k 保留当前概率最高的 $k$ 个 token，排除其他候选，并在保
 
 ### Top-p / Nucleus Sampling
 
-Holtzman et al. (2020) 提出了 nucleus sampling。它先按概率从高到低排序，再保留累计概率首次达到或超过指定阈值的最短前缀候选集合。
+[Holtzman et al. (2020)](https://iclr.cc/virtual_2020/poster_rygGQyrFvH.html "文献引用") 提出了 nucleus sampling。它先按概率从高到低排序，再保留累计概率首次达到或超过指定阈值的最短前缀候选集合。
 
 该策略通常称为 top-p。为避免把阈值与模型分布 $p$ 混淆，本页将阈值记为 $\rho\in(0,1]$。如果排序后的概率为 $0.5$、$0.3$、$0.15$、$0.05$，当 $\rho=0.75$ 时保留前两个候选；当 $\rho=0.9$ 时保留前三个。
 
@@ -93,13 +93,13 @@ $$
 
 ## 与不确定性研究的关系
 
-不确定性量化（Uncertainty Quantification，UQ）中的多回答分析依赖所生成的样本。由公式 $\eqref{eq:temperature-softmax}$ 和 $\eqref{eq:truncated-sampling-distribution}$ 可知，改变 temperature 或截断规则，就可能改变回答的分布，进而影响从回答集合计算的统计量。
+UQ 中的多回答分析依赖所生成的样本。由公式 $\eqref{eq:temperature-softmax}$ 和 $\eqref{eq:truncated-sampling-distribution}$ 可知，改变 temperature 或截断规则，就可能改变回答的分布，进而影响从回答集合计算的统计量。
 
-Sampling 中的随机变化也不能直接等同于模型对正确答案的不确定性。不同文本可能表达同一个意思。[Farquhar et al. (2024)](https://www.nature.com/articles/s41586-024-07421-0) 在研究不确定性时明确区分了具体措辞的变化与答案含义的变化。
+Sampling 中的随机变化也不能直接等同于模型对正确答案的不确定性。不同文本可能表达同一个意思。[Farquhar et al. (2024)](https://www.nature.com/articles/s41586-024-07421-0 "文献引用") 在研究不确定性时明确区分了具体措辞的变化与答案含义的变化。
 
 因此，比较不同研究的 UQ 结果时，需要检查 temperature、top-k、top-p、生成次数、长度上限和停止规则，并说明概率来自调整前的 $p$ 还是实际生成所用的 $q$。多次 greedy 得到相同输出，也不能单独证明回答正确。
 
-## 参考文献（References）
+## 参考文献
 
 - Holtzman, A., Buys, J., Du, L., Forbes, M., Choi, Y. (2020). *The Curious Case of Neural Text Degeneration*. International Conference on Learning Representations. [Conference](https://iclr.cc/virtual_2020/poster_rygGQyrFvH.html) · [Paper](https://arxiv.org/abs/1904.09751)
 - Farquhar, S., Kossen, J., Kuhn, L., Gal, Y. (2024). *Detecting hallucinations in large language models using semantic entropy*. Nature, 630, 625–630. [Paper](https://www.nature.com/articles/s41586-024-07421-0)

@@ -5,19 +5,19 @@ tags:
   - judge
 ---
 
-# 大语言模型（Large Language Model，LLM）裁判
+# LLM 裁判（LLM-as-a-Judge）
 
-模型裁判（LLM-as-a-Judge）使用 LLM 对回答进行评分、比较或标签判定。它可以扩大评价规模，但输出仍是模型判断，不能自动取代参考真值（Ground Truth）。
+LLM 裁判使用 LLM 对回答进行评分、比较或标签判定。它可以扩大评价规模，但输出仍是模型判断，不能自动取代参考真值。
 
 ## 三种常见设置
 
-Zheng et al. (2023) 比较单回答评分、成对比较和参考引导评分。单回答评分便于批量处理，但分值含义需要稳定量表；成对比较直接回答哪个更好，却随候选模型增加带来更多配对；参考引导方式向裁判提供标准解或证据，适合能够建立可靠参照的任务。
+[Zheng et al. (2023)](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html "文献引用") 比较单回答评分、成对比较和参考引导评分。单回答评分便于批量处理，但分值含义需要稳定量表；成对比较直接回答哪个更好，却随候选模型增加带来更多配对；参考引导方式向裁判提供标准解或证据，适合能够建立可靠参照的任务。
 
 有参考的评价还要检查参考是否完整。无参考评价更多依赖裁判内部知识与偏好，不能据此声称已进行外部事实核查。偏好一致性、任务正确性和证据支持应分别验证。
 
 ## 需要实测的偏差
 
-Zheng et al. (2023) 报告位置偏差、偏好冗长回答、自我增强偏差与推理能力限制。具体实验结果属于论文考察的模型与任务，不应扩展为所有裁判的固定偏差大小。同系列模型可能共享表达习惯或错误，因而还应按生成模型与裁判模型的组合报告结果，检查自偏好与模型家族偏差。
+[Zheng et al. (2023)](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html "文献引用") 报告位置偏差、偏好冗长回答、自我增强偏差与推理能力限制。具体实验结果属于论文考察的模型与任务，不应扩展为所有裁判的固定偏差大小。同系列模型可能共享表达习惯或错误，因而还应按生成模型与裁判模型的组合报告结果，检查自偏好与模型家族偏差。
 
 prompt 中评分维度、示例、证据排列与输出格式都可能改变判定。建议用交换答案顺序、隐藏模型身份、固定量表与参考证据等方式检查敏感性。交换顺序后发生冲突，应保留冲突或按预设规则裁决，不能选择有利于某模型的一次结果。
 
@@ -29,11 +29,11 @@ prompt 中评分维度、示例、证据排列与输出格式都可能改变判�
 
 医学问题还需要相应专家评价。通用对话中的人类偏好一致程度，不能直接证明临床正确性判定能力。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [人工评价](human-evaluation.md)
 - [幻觉标签](hallucination-labels.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Zheng, L., Chiang, W.-L., Sheng, Y., et al. (2023). *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*. NeurIPS 36, Datasets and Benchmarks. [Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)

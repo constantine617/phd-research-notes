@@ -5,7 +5,7 @@ tags:
 
 # 认知不确定性与数据不确定性（Epistemic and Aleatoric Uncertainty）
 
-这一区分追问的是不确定性的来源，以及什么信息可能减少它。认知不确定性主要与知识、数据或模型识别不足有关；数据不确定性主要与给定观察条件下结果的随机变化有关。Hüllermeier and Waegeman (2021) 系统讨论了不同形式化方式，并没有把某一种分解当作所有任务的唯一答案。
+这一区分追问的是不确定性的来源，以及什么信息可能减少它。认知不确定性主要与知识、数据或模型识别不足有关；数据不确定性主要与给定观察条件下结果的随机变化有关。[Hüllermeier and Waegeman (2021)](https://doi.org/10.1007/s10994-021-05946-3 "文献引用") 系统讨论了不同形式化方式，并没有把某一种分解当作所有任务的唯一答案。
 
 ## 经典区分及其条件
 
@@ -19,11 +19,11 @@ tags:
 
 在贝叶斯（Bayesian）建模中，可以对模型参数保留后验分布，再区分“每个参数模型内部的预测分散”与“不同参数模型之间的分歧”。在指定概率模型中，这种区分可借助熵与互信息（Mutual Information）形式化。它需要一个明确的参数后验、预测对象和数据条件。
 
-普通语言模型的一次 checkpoint 并没有自动提供经过验证的参数后验。把同一个 checkpoint 运行多次，也不等于从多个可能参数模型中取样。Kuhn et al. (2023) 明确说明其原始语义熵工作使用单一模型输出分布，并未采用互信息来分离认知不确定性。
+普通语言模型的一次 checkpoint 并没有自动提供经过验证的参数后验。把同一个 checkpoint 运行多次，也不等于从多个可能参数模型中取样。[Kuhn et al. (2023)](https://arxiv.org/abs/2302.09664v3 "文献引用") 明确说明其原始语义熵（Semantic Entropy）工作使用单一模型输出分布，并未采用互信息来分离认知不确定性。
 
 ## 语言生成为什么更难映射
 
-大语言模型（Large Language Model，LLM）的不确定性量化（Uncertainty Quantification，UQ）可能针对字符串、答案含义或任务正确性。换一个预测对象，什么算“结果变化”就会改变。同义改写在字符串空间中产生变化，在含义空间中却可能完全消失。
+LLM 的 UQ 可能针对字符串、答案含义或任务正确性。换一个预测对象，什么算“结果变化”就会改变。同义改写在字符串空间中产生变化，在含义空间中却可能完全消失。
 
 问题歧义也需要区别处理。“他何时到任”缺少人物和职位，多个答案可能分别对应合理解释。这是输入条件不充分的表现；在未确定潜在任务模型前，不宜直接判成某一种经典不确定性。补充上下文可以减少歧义，但这与重新训练模型解决知识缺口不是同一个干预。
 
@@ -37,12 +37,12 @@ Sampling 随机性是生成程序从指定分布中选择结果的机制。改�
 
 在当前研究中，更稳妥的操作是先报告“某种条件下的语义分歧”“参数模型之间的预测差异”或“有限样本估计波动”，再说明把它映射到经典概念所需的假设。若没有验证这些假设，就保留为操作性信号，而不强行完成二分。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [Sampling 方法](../sampling-based/index.md)
 - [预测熵](../sampling-based/predictive-entropy.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Hüllermeier, E., Waegeman, W. (2021). *Aleatoric and epistemic uncertainty in machine learning: an introduction to concepts and methods*. Machine Learning, 110, 457–506. [DOI](https://doi.org/10.1007/s10994-021-05946-3) · [作者预印本](https://arxiv.org/abs/1910.09457v3)
 - Kuhn, L., Gal, Y., Farquhar, S. (2023). *Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation*. ICLR. [作者会议版本](https://arxiv.org/abs/2302.09664v3)

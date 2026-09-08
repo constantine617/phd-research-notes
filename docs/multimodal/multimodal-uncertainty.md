@@ -7,7 +7,7 @@ tags:
 
 # 多模态不确定性（Multimodal Uncertainty）
 
-多模态不确定性讨论图像、语言及其交互中尚未确定的信息。在大型视觉语言模型（Large Vision-Language Model，LVLM）中，一个回答分数可能同时受到可见信息、问题歧义、模型知识和生成策略影响。没有一个无需假设便能把它唯一拆成若干部分的通用公式。
+多模态不确定性讨论图像、语言及其交互中尚未确定的信息。在 LVLM 中，一个回答分数可能同时受到可见信息、问题歧义、模型知识和生成策略影响。没有一个无需假设便能把它唯一拆成若干部分的通用公式。
 
 ## 按问题定位不确定性来源
 
@@ -22,9 +22,9 @@ tags:
 
 ## 不同信号测量不同对象
 
-Khan and Fu (2024) 研究黑盒视觉问答，通过较小的问题生成模型构造邻域问题，再检查原模型回答是否保持一致。他们在指定视觉问答数据与模型上评价这种一致性与选择性预测的关系。代理生成的问题不保证严格等价，因而分数还受代理质量影响。
+[Khan and Fu (2024)](https://openaccess.thecvf.com/content/CVPR2024/html/Khan_Consistency_and_Uncertainty_Identifying_Unreliable_Responses_From_Black-Box_Vision-Language_Models_CVPR_2024_paper.html "文献引用") 研究黑盒 VQA，通过较小的问题生成模型构造邻域问题，再检查原模型回答是否保持一致。他们在指定 VQA 数据与模型上评价这种一致性与选择性预测的关系。代理生成的问题不保证严格等价，因而分数还受代理质量影响。
 
-Favero et al. (2024) 比较有图与无图生成分布，测量视觉 prompt 的影响。这衡量条件依赖，不是回答错误概率；语法性 token 或已在文本前缀中表达过的图像信息，都可能使两分布接近。
+[Favero et al. (2024)](https://openaccess.thecvf.com/content/CVPR2024/html/Favero_Multi-Modal_Hallucination_Control_by_Visual_Information_Grounding_CVPR_2024_paper.html "文献引用") 比较有图与无图生成分布，测量视觉 prompt 的影响。这衡量条件依赖，不是回答错误概率；语法性 token 或已在文本前缀中表达过的图像信息，都可能使两分布接近。
 
 两种信号分别关注邻域行为与视觉条件影响，不能称为同一种不确定性，也不能直接相减来得到“纯视觉不确定性”。
 
@@ -34,7 +34,7 @@ Favero et al. (2024) 比较有图与无图生成分布，测量视觉 prompt 的
 
 同时评价错误排序、[概率校准](../evaluation/calibration-metrics/index.md)、[风险–覆盖率](../evaluation/selective-prediction/risk-coverage.md)与成本。回答稳定可能来自共同错误；不稳定也可能来自合理的多解或改写失真。解释必须回到任务标签与具体证据。
 
-## 参考文献（References）
+## 参考文献
 
 - Khan, Z., Fu, Y. (2024). *Consistency and Uncertainty: Identifying Unreliable Responses From Black-Box Vision-Language Models for Selective Visual Question Answering*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 10854–10863. [Paper](https://openaccess.thecvf.com/content/CVPR2024/html/Khan_Consistency_and_Uncertainty_Identifying_Unreliable_Responses_From_Black-Box_Vision-Language_Models_CVPR_2024_paper.html)
 - Favero, A., Zancato, L., Trager, M., Choudhary, S., Perera, P., Achille, A., Swaminathan, A., Soatto, S. (2024). *Multi-Modal Hallucination Control by Visual Information Grounding*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 14303–14312. [Paper](https://openaccess.thecvf.com/content/CVPR2024/html/Favero_Multi-Modal_Hallucination_Control_by_Visual_Information_Grounding_CVPR_2024_paper.html)

@@ -8,7 +8,7 @@ tags:
 
 # Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Lorenz Kuhn, Yarin Gal, Sebastian Farquhar。
 - 年份：2023。
@@ -20,7 +20,7 @@ tags:
 
 ## 研究问题
 
-Kuhn et al. (2023)指出，自然语言可以用不同词序和措辞表达相同答案。直接在字符串层面计算熵，会把表达多样性和答案含义的不确定性混在一起。论文提出语义不确定性（Semantic Uncertainty），将关注单位转为答案的意义。
+[Kuhn et al. (2023)](https://arxiv.org/abs/2302.09664v3 "文献引用")指出，自然语言可以用不同词序和措辞表达相同答案。直接在字符串层面计算熵，会把表达多样性和答案含义的不确定性混在一起。论文提出语义不确定性（Semantic Uncertainty），将关注单位转为答案的意义。
 
 ## 方法与流程
 
@@ -38,7 +38,7 @@ Kuhn et al. (2023)指出，自然语言可以用不同词序和措辞表达相�
 
 ## 优势与局限
 
-该工作的价值在于明确“对什么随机变量计算熵”。它给开放生成的不确定性量化（Uncertainty Quantification，UQ）增加了语义层面的不变性。
+该工作的价值在于明确“对什么随机变量计算熵”。它给开放生成的 UQ 增加了语义层面的不变性。
 
 本笔记的理解是，语义聚类、有限样本覆盖和正确性标签构成三个不同误差来源。所读 v3 的 §6 的 Performance evaluation 段（第 7 页）将正确答案与较高不确定性的方向写反；实际使用时应明确让错误作为正类，或相应翻转分数方向，不能照抄该句。
 
@@ -48,12 +48,12 @@ Kuhn et al. (2023)指出，自然语言可以用不同词序和措辞表达相�
 
 这篇论文是语义层面 UQ 的方法起点，适合与后续 Nature 工作和低成本探针共同阅读。实验设计需分别控制答案生成、等价判定、正确性标注和成本。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [语义熵知识页](../uncertainty/sampling-based/semantic-entropy.md)
 - [语义等价评价](../evaluation/ground-truth/semantic-equivalence.md)
 - [Nature 后续工作](2024-farquhar-semantic-entropy.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Kuhn, L., Gal, Y., Farquhar, S. (2023). *Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation*. ICLR. [原文](https://arxiv.org/abs/2302.09664v3)

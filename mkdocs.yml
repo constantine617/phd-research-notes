@@ -66,38 +66,38 @@ nav:
       - 当前研究重点: research-overview/current-focus.md
   - 基础知识:
       - 总览: foundations/index.md
-      - 语言模型:
+      - 语言模型 Language Models:
           - 总览: foundations/language-models/index.md
-          - 自回归生成: foundations/language-models/autoregressive-generation.md
+          - 自回归生成 Autoregressive Generation: foundations/language-models/autoregressive-generation.md
           - Token 与序列概率: foundations/language-models/token-sequence-probability.md
           - 解码与 Sampling: foundations/language-models/decoding-sampling.md
-          - 内部表征: foundations/language-models/hidden-representations.md
+          - 内部表征 Hidden Representations: foundations/language-models/hidden-representations.md
       - 概率与信息论:
           - 总览: foundations/probability-information-theory/index.md
-          - 概率与似然: foundations/probability-information-theory/probability-likelihood.md
-          - 熵: foundations/probability-information-theory/entropy.md
-          - 交叉熵: foundations/probability-information-theory/cross-entropy.md
-          - 负对数似然: foundations/probability-information-theory/negative-log-likelihood.md
-          - KL 散度: foundations/probability-information-theory/kl-divergence.md
-      - 视觉语言模型:
+          - 概率与似然 Probability and Likelihood: foundations/probability-information-theory/probability-likelihood.md
+          - 熵 Entropy: foundations/probability-information-theory/entropy.md
+          - 交叉熵 Cross-Entropy: foundations/probability-information-theory/cross-entropy.md
+          - 负对数似然 NLL: foundations/probability-information-theory/negative-log-likelihood.md
+          - KL 散度 KL Divergence: foundations/probability-information-theory/kl-divergence.md
+      - VLM:
           - 总览: foundations/vision-language-models/index.md
-          - 大型视觉语言模型: foundations/vision-language-models/lvlm-overview.md
-          - 多模态表征: foundations/vision-language-models/multimodal-representation.md
-          - 跨模态对齐: foundations/vision-language-models/cross-modal-alignment.md
-          - 视觉定位: foundations/vision-language-models/visual-grounding.md
+          - LVLM: foundations/vision-language-models/lvlm-overview.md
+          - 多模态表征 Multimodal Representation: foundations/vision-language-models/multimodal-representation.md
+          - 跨模态对齐 Cross-modal Alignment: foundations/vision-language-models/cross-modal-alignment.md
+          - 视觉定位 Visual Grounding: foundations/vision-language-models/visual-grounding.md
   - 可信性与幻觉:
       - 总览: hallucination/index.md
-      - 模型可信性: hallucination/trustworthiness-overview.md
-      - 事实性: hallucination/factuality.md
-      - 忠实性: hallucination/faithfulness.md
-      - 鲁棒性: hallucination/robustness.md
+      - 模型可信性 Trustworthiness: hallucination/trustworthiness-overview.md
+      - 事实性 Factuality: hallucination/factuality.md
+      - 忠实性 Faithfulness: hallucination/faithfulness.md
+      - 鲁棒性 Robustness: hallucination/robustness.md
       - 幻觉定义: hallucination/hallucination-definition.md
       - 幻觉分类: hallucination/hallucination-taxonomy.md
       - 成因与失败表现: hallucination/causes-failure-modes.md
-      - 幻觉检测: hallucination/detection.md
-      - 幻觉缓解: hallucination/mitigation.md
+      - 幻觉检测 Hallucination Detection: hallucination/detection.md
+      - 幻觉缓解 Hallucination Mitigation: hallucination/mitigation.md
       - 正确性与可靠性: hallucination/reliability-correctness.md
-  - 不确定性量化:
+  - UQ:
       - 总览: uncertainty/index.md
       - UQ 总览: uncertainty/uq-overview.md
       - UQ 分类: uncertainty/uq-taxonomy.md
@@ -106,44 +106,44 @@ nav:
           - 认知与数据不确定性: uncertainty/foundations/epistemic-aleatoric.md
           - 置信度与不确定性: uncertainty/foundations/confidence-vs-uncertainty.md
           - 不确定性与正确性: uncertainty/foundations/uncertainty-vs-correctness.md
-      - 基于概率的 UQ: uncertainty/probability-based/index.md
+      - 基于概率的 UQ Probability-based UQ: uncertainty/probability-based/index.md
       - Sampling 方法:
           - 总览: uncertainty/sampling-based/index.md
-          - 自一致性: uncertainty/sampling-based/self-consistency.md
-          - 预测熵: uncertainty/sampling-based/predictive-entropy.md
-          - 语义熵: uncertainty/sampling-based/semantic-entropy.md
-      - 语言自报置信度: uncertainty/verbal-confidence/index.md
-      - 置信度校准:
+          - 自一致性 Self-Consistency: uncertainty/sampling-based/self-consistency.md
+          - 预测熵 Predictive Entropy: uncertainty/sampling-based/predictive-entropy.md
+          - 语义熵 Semantic Entropy: uncertainty/sampling-based/semantic-entropy.md
+      - 语言自报置信度 Verbal Confidence: uncertainty/verbal-confidence/index.md
+      - 置信度校准 Confidence Calibration:
           - 总览: calibration/index.md
           - 校准方法: calibration/calibration-methods.md
-          - 后处理校准: calibration/post-hoc-calibration.md
-      - 高效 UQ: efficient-uq/index.md
-      - 基于表征的 UQ:
+          - 后处理校准 Post-hoc Calibration: calibration/post-hoc-calibration.md
+      - 高效 UQ Efficient UQ: efficient-uq/index.md
+      - 基于表征的 UQ Representation-based UQ:
           - 总览: representation-uq/index.md
           - hidden state 与不确定性: representation-uq/hidden-state-uncertainty.md
-      - 证据感知 UQ: uncertainty/evidence-aware/index.md
+      - 证据感知 UQ Evidence-aware UQ: uncertainty/evidence-aware/index.md
   - 评估与 Benchmark:
       - 总览: evaluation/index.md
-      - 参考真值:
+      - 参考真值 Ground Truth:
           - 总览: evaluation/ground-truth/index.md
           - 正确性判定: evaluation/ground-truth/correctness-definition.md
           - 幻觉标签: evaluation/ground-truth/hallucination-labels.md
-          - 语义等价: evaluation/ground-truth/semantic-equivalence.md
-          - 人工评价: evaluation/ground-truth/human-evaluation.md
-          - LLM-as-a-Judge: evaluation/ground-truth/llm-as-a-judge.md
+          - 语义等价 Semantic Equivalence: evaluation/ground-truth/semantic-equivalence.md
+          - 人工评价 Human Evaluation: evaluation/ground-truth/human-evaluation.md
+          - 模型裁判 LLM-as-a-Judge: evaluation/ground-truth/llm-as-a-judge.md
       - 检测指标:
           - 总览: evaluation/detection-metrics/index.md
-          - AUROC: evaluation/detection-metrics/auroc.md
-          - AUPRC: evaluation/detection-metrics/auprc.md
+          - 受试者工作特征曲线下面积 AUROC: evaluation/detection-metrics/auroc.md
+          - 精确率–召回率曲线下面积 AUPRC: evaluation/detection-metrics/auprc.md
           - 阈值指标: evaluation/detection-metrics/threshold-metrics.md
       - 校准指标:
           - 总览: evaluation/calibration-metrics/index.md
-          - ECE: evaluation/calibration-metrics/expected-calibration-error.md
-          - Brier Score: evaluation/calibration-metrics/brier-score.md
-      - 选择性预测:
+          - 期望校准误差 ECE: evaluation/calibration-metrics/expected-calibration-error.md
+          - Brier 分数 Brier Score: evaluation/calibration-metrics/brier-score.md
+      - 选择性预测 Selective Prediction:
           - 总览: evaluation/selective-prediction/index.md
-          - Risk-Coverage: evaluation/selective-prediction/risk-coverage.md
-          - AURC: evaluation/selective-prediction/aurc.md
+          - 风险–覆盖率 Risk-Coverage: evaluation/selective-prediction/risk-coverage.md
+          - 风险–覆盖率曲线下面积 AURC: evaluation/selective-prediction/aurc.md
       - 基础任务指标: evaluation/basic-task-metrics.md
       - 效率指标: evaluation/efficiency-metrics.md
       - 实验协议:
@@ -161,11 +161,11 @@ nav:
   - 多模态可信性:
       - 总览: multimodal/index.md
       - LVLM 幻觉: multimodal/lvlm-hallucination.md
-      - 多模态不确定性: multimodal/multimodal-uncertainty.md
-      - 跨模态一致性: multimodal/cross-modal-consistency.md
+      - 多模态不确定性 Multimodal Uncertainty: multimodal/multimodal-uncertainty.md
+      - 跨模态一致性 Cross-modal Consistency: multimodal/cross-modal-consistency.md
       - 视觉定位与可信性: multimodal/grounding-for-trustworthiness.md
       - 基于视觉支持的置信度: multimodal/grounding-based-confidence.md
-      - 多模态证据: multimodal/multimodal-evidence.md
+      - 多模态证据 Multimodal Evidence: multimodal/multimodal-evidence.md
   - 医学 AI 应用:
       - 总览: medical/index.md
       - 医学 LVLM: medical/medical-lvlms.md
@@ -174,14 +174,14 @@ nav:
       - 医学评价: medical/medical-evaluation.md
   - 论文笔记:
       - 总览: papers/index.md
-      - Guo 2017 · 置信度校准: papers/2017-guo-calibration.md
-      - Tian 2023 · 语言自报置信度: papers/2023-tian-verbal-confidence.md
-      - Wang 2023 · 自一致性: papers/2023-wang-self-consistency.md
-      - Kuhn 2023 · 语义不确定性: papers/2023-kuhn-semantic-uncertainty.md
-      - Farquhar 2024 · 语义熵: papers/2024-farquhar-semantic-entropy.md
+      - Guo 2017 · 置信度校准 Confidence Calibration: papers/2017-guo-calibration.md
+      - Tian 2023 · 语言自报置信度 Verbal Confidence: papers/2023-tian-verbal-confidence.md
+      - Wang 2023 · 自一致性 Self-Consistency: papers/2023-wang-self-consistency.md
+      - Kuhn 2023 · 语义不确定性 Semantic Uncertainty: papers/2023-kuhn-semantic-uncertainty.md
+      - Farquhar 2024 · 语义熵 Semantic Entropy: papers/2024-farquhar-semantic-entropy.md
       - Manakul 2023 · SelfCheckGPT: papers/2023-manakul-selfcheckgpt.md
-      - Azaria 2023 · 内部表征: papers/2023-azaria-internal-state.md
-      - Kossen 2024 · 语义熵探针: papers/2024-kossen-semantic-entropy-probes.md
+      - Azaria 2023 · 内部表征 Hidden Representations: papers/2023-azaria-internal-state.md
+      - Kossen 2024 · 语义熵探针 SEP: papers/2024-kossen-semantic-entropy-probes.md
       - Min 2023 · FActScore: papers/2023-min-factscore.md
       - Li 2023 · POPE: papers/2023-li-pope.md
       - Khan 2024 · 一致性与不确定性: papers/2024-khan-consistency-uncertainty.md

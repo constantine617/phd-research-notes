@@ -6,7 +6,7 @@ tags:
 
 # 选择性预测（Selective Prediction）
 
-选择性预测允许系统只交付部分预测，其余拒答（Abstention）或转交其他流程。评价不仅看接受部分是否更准确，还看覆盖率（Coverage）下降了多少。Geifman and El-Yaniv (2017) 在深度分类中研究这一风险与覆盖率的权衡。
+选择性预测允许系统只交付部分预测，其余拒答（Abstention）或转交其他流程。评价不仅看接受部分是否更准确，还看覆盖率（Coverage）下降了多少。[Geifman and El-Yaniv (2017)](https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html "文献引用") 在深度分类中研究这一风险与覆盖率的权衡。
 
 ## 两个互补页面
 
@@ -19,6 +19,6 @@ tags:
 
 分类研究中的有限样本或分布假设下保证不能直接推广到开放生成与分布变化。应用前仍要检查任务标签、数据独立性与阈值选择过程。
 
-## 参考文献（References）
+## 参考文献
 
 - Geifman, Y., El-Yaniv, R. (2017). *Selective Classification for Deep Neural Networks*. Advances in Neural Information Processing Systems, 30. [Paper](https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html)

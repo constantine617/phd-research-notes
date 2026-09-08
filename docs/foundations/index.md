@@ -3,9 +3,9 @@ tags:
   - foundations
 ---
 
-# 基础知识（Foundations）
+# 基础知识
 
-本板块整理与博士研究主线直接相关的前置知识，帮助理解大语言模型（Large Language Model，LLM）的生成过程，以及后续研究能够读取和分析哪些模型信息。内容围绕不确定性量化（Uncertainty Quantification，UQ）、幻觉（Hallucination）与错误检测所需的基础展开。
+本板块整理与博士研究主线直接相关的前置知识，帮助理解 LLM 的生成过程，以及后续研究能够读取和分析哪些模型信息。内容围绕 UQ、幻觉（Hallucination）与错误检测所需的基础展开。
 
 当前首先整理[语言模型（Language Models）](language-models/index.md)。这一部分解释模型如何逐步生成 token、如何给 token 和序列赋予概率、decoding 与 sampling 如何决定实际输出，以及 hidden state 在生成过程中处于什么位置。
 

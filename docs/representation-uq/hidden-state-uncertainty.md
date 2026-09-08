@@ -6,7 +6,7 @@ tags:
 
 # hidden state 与不确定性
 
-在大语言模型（Large Language Model，LLM）中，hidden state 可以作为不确定性量化（Uncertainty Quantification，UQ）的输入特征。问题不是为每个向量赋予一个固定“置信度含义”，而是明确选取哪个计算位置，再验证从该位置能否预测目标。表征本身的机制复用[内部表征](../foundations/language-models/hidden-representations.md)。
+在 LLM 中，hidden state 可以作为 UQ 的输入特征。问题不是为每个向量赋予一个固定“置信度含义”，而是明确选取哪个计算位置，再验证从该位置能否预测目标。表征本身的机制复用[内部表征](../foundations/language-models/hidden-representations.md)。
 
 ## token、层与观察时点
 
@@ -42,11 +42,11 @@ $\mathcal I$ 是选定位置集合，$P$ 为 pooling 操作，$\mathbf r$ 为所
 
 ## Probe 的目标与输出
 
-探针（Probe）可以预测正确性、证据支持或代理不确定性标签。Azaria and Mitchell (2023) 从内部激活预测陈述真假；Kossen et al. (2024) 则用语义熵高低标签训练线性分类器，并分析层和 token 位置差异。两者提供不同监督目标的例子，不能把输出都称为同一个“真实不确定性”。
+探针可以预测正确性、证据支持或代理不确定性标签。[Azaria and Mitchell (2023)](https://aclanthology.org/2023.findings-emnlp.68/ "文献引用") 从内部激活预测陈述真假；[Kossen et al. (2024)](https://arxiv.org/abs/2406.15927v1 "文献引用") 则用语义熵高低标签训练线性分类器，并分析层和 token 位置差异。两者提供不同监督目标的例子，不能把输出都称为同一个“真实不确定性”。
 
 对高低熵标签训练的 sigmoid 输出，最直接是分类器对“高熵”类别的分数，不是连续熵值，也不是已经校准的错误概率。如果要将它用于正确性预测，必须用独立正确性标签检验这种复用。
 
-## 特征选择与验证边界
+## 如何选择特征，验证结果能支持哪些结论？
 
 层、位置和 pooling 需要在训练或验证数据上选择。对每个候选层试验后只报告测试集最佳者，会使结果混入测试选择。训练集还应防止相同问题、改写模板或重复实体跨集合泄漏，避免 probe 记住浅层模式。
 
@@ -58,12 +58,12 @@ $\mathcal I$ 是选定位置集合，$P$ 为 pooling 操作，$\mathbf r$ 为所
 
 当前研究可先选择具有明确时点的一小组特征，与概率分数在相同任务上比较，再检查其新增信息和迁移能力。这使“内部状态可预测什么”成为可检验的问题，而不是对模型自我认识的假定。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [表征方法总览](index.md)
 - [置信度与不确定性](../uncertainty/foundations/confidence-vs-uncertainty.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Azaria, A., Mitchell, T. (2023). *The Internal State of an LLM Knows When It’s Lying*. Findings of EMNLP, 967–976. [Paper](https://aclanthology.org/2023.findings-emnlp.68/)
 - Kossen, J., Han, J., Razzak, M., Schut, L., Malik, S., Gal, Y. (2024). *Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs*. ICML Workshop on Foundation Models in the Wild；本页使用 arXiv v1. [作者版本](https://arxiv.org/abs/2406.15927v1)

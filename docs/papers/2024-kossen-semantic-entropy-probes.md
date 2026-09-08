@@ -7,9 +7,9 @@ tags:
   - efficiency
 ---
 
-# Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
+# Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLM
 
-## 文献信息（Metadata）
+## 文献信息
 
 - 作者：Jannik Kossen, Jiatong Han, Muhammed Razzak, Lisa Schut, Shreshth Malik, Yarin Gal。
 - 年份：2024。
@@ -20,7 +20,7 @@ tags:
 
 ## 研究问题与方法
 
-Kossen et al. (2024)希望减少语义熵（Semantic Entropy）在 inference 时的多次生成成本。语义熵探针（Semantic Entropy Probe，SEP）从大语言模型（Large Language Model，LLM）的 hidden state 预测高、低语义熵类别。
+[Kossen et al. (2024)](https://arxiv.org/abs/2406.15927v1 "文献引用")希望减少语义熵在 inference 时的多次生成成本。语义熵探针（Semantic Entropy Probe，SEP）从 LLM 的 hidden state 预测高、低语义熵类别。
 
 离线阶段对训练问题生成多个答案，聚类后计算频数语义熵，再将其二值化。分割阈值按两组内部的平方偏差确定。作者在贪心回答相关的 hidden state 上训练带正则化的逻辑回归探针。
 
@@ -32,7 +32,7 @@ Kossen et al. (2024)希望减少语义熵（Semantic Entropy）在 inference 时
 
 实验覆盖 TriviaQA、SQuAD、BioASQ、Natural Questions，以及 Llama、Mistral、Phi 等特定模型。短答案与所谓 long answer 使用不同生成指令；后者主要是简短完整句，不等于长文档生成。离线标签使用额外 sampling 和语义判断，在线才以单次 hidden state 近似。
 
-对照包括直接用正确性标签训练的 accuracy probe，以及成本较高的语义熵。作者报告，直接正确性探针在部分同分布设置更强，SEP 在所研究的任务迁移设置中更有优势；SEP 与完整语义熵仍存在性能差距。
+对照包括直接用正确性标签训练的 accuracy probe，以及成本较高的语义熵。作者报告，直接正确性探针在部分同分布设置更强，语义熵探针 在所研究的任务迁移设置中更有优势；语义熵探针 与完整语义熵仍存在性能差距。
 
 ## 优势与局限
 
@@ -44,14 +44,14 @@ Kossen et al. (2024)希望减少语义熵（Semantic Entropy）在 inference 时
 
 ## 与博士研究主线的关系
 
-该论文连接高效不确定性量化（Uncertainty Quantification，UQ）和表征信号。设计类似实验时应分别评价代理任务拟合、真实错误检测、跨任务迁移及摊销成本，避免只凭探针训练准确率判断可靠性。
+该论文连接高效 UQ 和表征信号。设计类似实验时应分别评价代理任务拟合、真实错误检测、跨任务迁移及摊销成本，避免只凭探针训练准确率判断可靠性。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [高效 UQ](../efficient-uq/index.md)
 - [表征 UQ](../representation-uq/index.md)
 - [语义熵原方法](2023-kuhn-semantic-uncertainty.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Kossen, J., Han, J., Razzak, M., Schut, L., Malik, S., Gal, Y. (2024). *Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs*. ICML Workshop on Foundation Models in the Wild；本页使用 arXiv v1. [原文](https://arxiv.org/abs/2406.15927v1)

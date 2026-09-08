@@ -21,9 +21,9 @@ tags:
 
 ## 常见任务形式与粒度
 
-短语定位（Phrase Grounding）将描述中的短语与图像区域联系起来。Plummer et al. (2015) 的 Flickr30k Entities 工作为实体短语与区域建立了对应标注。这类任务可以涉及一句话中的多个实体，而不只是整张图像的一个主角。
+短语定位（Phrase Grounding）将描述中的短语与图像区域联系起来。[Plummer et al. (2015)](https://arxiv.org/abs/1505.04870v1 "文献引用") 的 Flickr30k Entities 工作为实体短语与区域建立了对应标注。这类任务可以涉及一句话中的多个实体，而不只是整张图像的一个主角。
 
-指代表达理解（Referring Expression Comprehension）要求根据描述识别所指对象，例如“靠近窗户的那个杯子”。当图中存在多个杯子时，仅识别“杯子”类别不够，还需要利用能够区分目标的属性或关系。Mao et al. (2016) 同时研究了这种表达的生成与理解。
+指代表达理解（Referring Expression Comprehension）要求根据描述识别所指对象，例如“靠近窗户的那个杯子”。当图中存在多个杯子时，仅识别“杯子”类别不够，还需要利用能够区分目标的属性或关系。[Mao et al. (2016)](https://arxiv.org/abs/1511.02283 "文献引用") 同时研究了这种表达的生成与理解。
 
 区域级定位（Region-level Grounding）强调证据的空间粒度。区域可以用边界框（Bounding Box）等形式表示，但“区域级”不是与前两类互斥的任务：短语定位和指代表达理解都可以输出边界框。
 
@@ -31,7 +31,7 @@ tags:
 
 ## 在生成式模型中的作用
 
-大型视觉语言模型（Large Vision-Language Model，LVLM）可以把空间指向与语言生成结合。Peng et al. (2024) 的 Kosmos-2 将文本片段与位置表示联系起来，使模型能够处理和输出带区域指向的内容。这说明定位可以进入语言交互接口，而不只作为独立的检测步骤。
+LVLM 可以把空间指向与语言生成结合。[Peng et al. (2024)](https://proceedings.iclr.cc/paper_files/paper/2024/file/e112a4671e8779aa9f640a0e3f81bd26-Paper-Conference.pdf "文献引用") 的 Kosmos-2 将文本片段与位置表示联系起来，使模型能够处理和输出带区域指向的内容。这说明定位可以进入语言交互接口，而不只作为独立的检测步骤。
 
 但带有坐标的输出仍是模型预测。边界框可能错误，框内属性也可能被误读；如果解释文字是在答案之后生成，还不能仅凭解释与答案一致，就证明它忠实反映了原先的计算依据。评价时应区分位置是否正确、陈述是否被支持，以及证据是否实际影响生成。
 
@@ -39,7 +39,7 @@ tags:
 
 注意力（Attention）权重描述某个计算模块如何对输入表示加权。较高权重可以提示一个值得检查的位置，但并不自动等于“这个位置解释了答案”，更不自动证明它支持答案中的具体事实。
 
-Jain and Wallace (2019) 在所研究的文本任务中发现，不同 attention 分布可以产生近似相同的预测，attention 权重也未必与其他特征重要性信号一致。这些结果不是针对所有 LVLM 的普遍定理；它们支持的谨慎结论是，不能未经验证就把 attention 可视化当成忠实解释。
+[Jain and Wallace (2019)](https://aclanthology.org/N19-1357/ "文献引用") 在所研究的文本任务中发现，不同 attention 分布可以产生近似相同的预测，attention 权重也未必与其他特征重要性信号一致。这些结果不是针对所有 LVLM 的普遍定理；它们支持的谨慎结论是，不能未经验证就把 attention 可视化当成忠实解释。
 
 在视觉任务中，可以结合区域标注与受控输入变化检查这种联系。例如，改变与问题相关的局部内容，观察模型是否相应改变回答。这样的检查也需要控制额外影响：遮挡可能改变图像分布或破坏上下文，单次输出变化本身不构成完整因果证明。
 
@@ -51,13 +51,13 @@ Jain and Wallace (2019) 在所研究的文本任务中发现，不同 attention 
 
 ## 与后续可靠性研究的关系
 
-视觉证据为不确定性量化（Uncertainty Quantification，UQ）增加了一类可研究的信息：不仅观察输出分布是否集中，还可以考察相关对象是否能定位、关键属性是否可见，以及语言陈述与证据是否一致。它是否比其他信号更有效，需要实验比较，本页不预设结论。
+视觉证据为 UQ 增加了一类可研究的信息：不仅观察输出分布是否集中，还可以考察相关对象是否能定位、关键属性是否可见，以及语言陈述与证据是否一致。它是否比其他信号更有效，需要实验比较，本页不预设结论。
 
 Grounding 也不能覆盖全部正确性要求。一个回答即使准确描述了可见对象，仍可能在额外知识或推理上出错；图像本身没有提供的信息，也不能仅靠找到区域来确认。医疗应用中的证据要求可作为长期扩展，但不在这里加入诊断流程或数据集内容。
 
 内部信息如何支持这些检查，见 [多模态表征](multimodal-representation.md)；本页保留为视觉定位与证据联系的概念入口，不展开具体 uncertainty 方法。
 
-## 参考文献（References）
+## 参考文献
 
 - Plummer, B. A., Wang, L., Cervantes, C. M., Caicedo, J. C., Hockenmaier, J., Lazebnik, S. (2015). *Flickr30k Entities: Collecting Region-to-Phrase Correspondences for Richer Image-to-Sentence Models*. Proceedings of the IEEE International Conference on Computer Vision, 2641–2649. [Paper](https://arxiv.org/abs/1505.04870v1)
 - Mao, J., Huang, J., Toshev, A., Camburu, O., Yuille, A., Murphy, K. (2016). *Generation and Comprehension of Unambiguous Object Descriptions*. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 11–20. [Paper](https://arxiv.org/abs/1511.02283)

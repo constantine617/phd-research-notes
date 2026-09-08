@@ -7,7 +7,7 @@ tags:
 
 # 内部表征（Hidden Representations）
 
-本页区分 hidden state 与内部表征。讨论范围是基于因果 Transformer 的生成式大语言模型（Large Language Model，LLM），重点解释内部向量怎样与 token 位置、输出 logits 和可靠性研究联系起来。
+本页区分 hidden state 与内部表征。讨论范围是基于因果 Transformer 的生成式 LLM，重点解释内部向量怎样与 token 位置、输出 logits 和可靠性研究联系起来。
 
 ## Hidden state 是什么
 
@@ -25,11 +25,11 @@ $$
 
 输入端的 token embedding 通常从词表表示中取得；经过模型层处理后的 hidden state 则结合了当前位置允许使用的上下文。因而，同一个 token 出现在不同上下文中时，其 hidden state 可以不同。
 
-[Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need) 的 decoder 使用因果约束，使一个位置只能读取自身及此前位置的信息。本页只需要这一约束与逐层处理的概念，更完整的 Transformer architecture 可以后续单独建立 canonical page。
+[Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need "文献引用") 的 decoder 使用因果约束，使一个位置只能读取自身及此前位置的信息。本页只需要这一约束与逐层处理的概念，更完整的 Transformer architecture 可以后续单独建立 canonical page。
 
 ## Hidden state 怎样连接 logits
 
-在常见语言模型输出层中，最后一层的表示经过输出投影（Output Projection）得到词表 logits。可以用以下简化表达理解这一步：
+在常见语言模型输出层中，最后一层的表示经过输出投影得到词表 logits。可以用以下简化表达理解这一步：
 
 $$
 \mathbf{z}_t
@@ -41,7 +41,7 @@ $$
 
 其中，$L$ 是最后一层的编号，$W_{\mathrm{out}}\in\mathbb{R}^{V\times d}$ 是输出投影矩阵，$V$ 是词表大小，$\mathbf{b}\in\mathbb{R}^{V}$ 是可选偏置，$\mathbf{z}_t\in\mathbb{R}^{V}$ 是该输入位置对应的 logits 向量。
 
-这是概念上的表达。实际模型可能在投影前进行归一化，也可能不使用偏置；提取的 hidden state 是否已经包含最后的归一化，要按具体实现确认。Vaswani et al. (2017) 描述了从 decoder 输出经线性变换和 softmax 得到下一个 token 概率的过程。
+这是概念上的表达。实际模型可能在投影前进行归一化，也可能不使用偏置；提取的 hidden state 是否已经包含最后的归一化，要按具体实现确认。[Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need "文献引用") 描述了从 decoder 输出经线性变换和 softmax 得到下一个 token 概率的过程。
 
 ### 位置与预测目标需要对齐
 
@@ -53,9 +53,9 @@ $$
 
 ## 为什么研究内部表示
 
-logits 是面向词表候选的输出分数，其 softmax 决定下一个 token 的分布。Hidden representations 则提供模型内部计算得到的特征。研究者可以检验这些特征是否与回答正确性（Correctness）、模型具备的知识、置信度（Confidence）或不确定性有关。
+logits 是面向词表候选的输出分数，其 softmax 决定下一个 token 的分布。Hidden representations 则提供模型内部计算得到的特征。研究者可以检验这些特征是否与回答正确性、模型具备的知识、置信度或不确定性有关。
 
-[Azaria and Mitchell (2023)](https://aclanthology.org/2023.findings-emnlp.68/) 在特定模型与数据上使用 hidden-layer activations 训练分类器，预测陈述的真假。这为从内部表示研究输出可靠性提供了直接例子。
+[Azaria and Mitchell (2023)](https://aclanthology.org/2023.findings-emnlp.68/ "文献引用") 在特定模型与数据上使用 hidden-layer activations 训练分类器，预测陈述的真假。这为从内部表示研究输出可靠性提供了直接例子。
 
 这一结果不能解释为任意 hidden state 都能直接读出正确答案，也不能保证换一个模型或任务仍然有效。读取某层向量只是获得信号，如何整理特征、如何判断目标，以及适用范围是什么，仍需分别检验。
 
@@ -71,11 +71,11 @@ logits 是面向词表候选的输出分数，其 softmax 决定下一个 token 
 
 ## 与当前研究的关系
 
-不确定性量化（Uncertainty Quantification，UQ）中的基于表征的 UQ（Representation-based UQ）是当前研究兴趣之一。它需要先明确所用向量的层、位置、是否经过归一化，以及与输出 token 的对应关系。
+UQ 中的基于表征的 UQ 是当前研究兴趣之一。它需要先明确所用向量的层、位置、是否经过归一化，以及与输出 token 的对应关系。
 
 这些约定决定了研究者实际读取什么信息。本页提供这一前置基础，具体使用哪类表征信号、是否比其他信号更有用，应由后续方法比较与错误分析回答。
 
-## 参考文献（References）
+## 参考文献
 
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., Polosukhin, I. (2017). *Attention Is All You Need*. Advances in Neural Information Processing Systems, 30. [Paper](https://papers.nips.cc/paper/7181-attention-is-all-you-need)
 - Azaria, A., Mitchell, T. (2023). *The Internal State of an LLM Knows When It’s Lying*. Findings of EMNLP, 967–976. [Paper](https://aclanthology.org/2023.findings-emnlp.68/)

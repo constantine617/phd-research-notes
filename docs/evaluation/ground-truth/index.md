@@ -6,7 +6,7 @@ tags:
 
 # 参考真值（Ground Truth）
 
-参考真值是实验采用的判定参照，其可靠性取决于来源、任务和建立过程。它不是一个天然无误的标签文件。数据说明应交代收集、标注、预处理与使用限制；Gebru et al. (2021) 的 Datasheets for Datasets 为这类记录提供了可复用的组织方式。
+参考真值是实验采用的判定参照，其可靠性取决于来源、任务和建立过程。它不是一个天然无误的标签文件。数据说明应交代收集、标注、预处理与使用限制；[Gebru et al. (2021)](https://doi.org/10.1145/3458723 "文献引用") 的 Datasheets for Datasets 为这类记录提供了可复用的组织方式。
 
 ## 先定义标签，再比较分数
 
@@ -24,6 +24,6 @@ tags:
 
 当无法确定标签时，保留“无法判断”及原因。若主指标只接受二元标签，应公开排除条件与数量，并分析被排除样本是否集中在困难问题上。
 
-## 参考文献（References）
+## 参考文献
 
 - Gebru, T., Morgenstern, J., Vecchione, B., et al. (2021). *Datasheets for Datasets*. Communications of the ACM, 64(12), 86–92. [Paper](https://doi.org/10.1145/3458723) · [作者预印本](https://arxiv.org/abs/1803.09010)

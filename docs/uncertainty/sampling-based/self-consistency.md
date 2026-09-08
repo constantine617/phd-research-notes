@@ -6,11 +6,11 @@ tags:
 
 # 自一致性（Self-Consistency）
 
-Self-Consistency 原始工作的目标是改进推理任务的 decoding 与答案聚合。Wang et al. (2023) 在思维链（Chain-of-Thought，CoT）prompt 的基础上生成多条推理路径，再对最终答案聚合。论文于 2022 年发布预印本，正式发表于 ICLR 2023。**原方法不应被描述为最初就是不确定性量化（Uncertainty Quantification，UQ）方法。**
+Self-Consistency 原始工作的目标是改进推理任务的 decoding 与答案聚合。[Wang et al. (2023)](https://arxiv.org/abs/2203.11171v4 "文献引用") 在CoTprompt 的基础上生成多条推理路径，再对最终答案聚合。论文于 2022 年发布预印本，正式发表于 ICLR 2023。**原方法不应被描述为最初就是 UQ 方法。**
 
 ## 原始方法如何工作
 
-大语言模型（Large Language Model，LLM）面对同一个推理问题，可以生成不同中间步骤。这些步骤可能通向同一个最终答案。原方法的直觉是，多个推理路径共同支持的答案值得优先选择；它通过 sampling 与答案聚合替代仅使用一次贪心 decoding 的结果。
+LLM 面对同一个推理问题，可以生成不同中间步骤。这些步骤可能通向同一个最终答案。原方法的直觉是，多个推理路径共同支持的答案值得优先选择；它通过 sampling 与答案聚合替代仅使用一次贪心 decoding 的结果。
 
 实现时，需要先从每条生成中提取最终答案。答案抽取、单位换算、数值规范化和无法解析的处理，都是方法的一部分。如果把整个推理段落进行字符串匹配，统计的对象就不再是原工作关注的最终答案。
 
@@ -30,13 +30,13 @@ $\mathbf 1[\cdot]$ 是指示函数，条件成立时取一，否则取零；$K$ 
 
 公式 $\eqref{eq:self-consistency-frequency}$ 描述当前模型和 sampling 设置下的答案出现比例。可以选择频率最大的答案作为输出，也可以用其频率或不同答案的分散程度构造 UQ 信号。若要评分的是事先生成的回答，应取那个回答所属答案的频率，而不能直接拿多数答案的高频率替它背书。
 
-把 $\hat p(a)$ 写成概率符号，是因为它估计答案分布；它并未自动成为“答案 $a$ 正确”的概率。Xiong et al. (2024) 将多回答一致性与置信度聚合用于校准和失败预测，说明这类复用需要单独的任务定义与实验。
+把 $\hat p(a)$ 写成概率符号，是因为它估计答案分布；它并未自动成为“答案 $a$ 正确”的概率。[Xiong et al. (2024)](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6733cf15e10e2cd1d59af033c3bb8507-Abstract-Conference.html "文献引用") 将多回答一致性与置信度聚合用于校准和失败预测，说明这类复用需要单独的任务定义与实验。
 
-## 精确匹配与语义匹配
+## 精确匹配（Exact Match，EM）与语义匹配
 
-精确匹配（Exact Match）适合输出可规范化且等价规则清楚的任务。例如可以统一数值格式，但只有在任务允许时才能将近似值视作同一个答案。一个尾数差异在概念问答中可能无关，在数值计算中却可能决定正确性。
+精确匹配适合输出可规范化且等价规则清楚的任务。例如可以统一数值格式，但只有在任务允许时才能将近似值视作同一个答案。一个尾数差异在概念问答中可能无关，在数值计算中却可能决定正确性。
 
-语义等价（Semantic Equivalence）适用于表达不同但意义相同的答案。不能用主题相近替代等价，也不能忽略否定、范围或单位。若使用模型判定等价，比较器自己的错误和成本应计入，相关概率聚合见[语义熵](semantic-entropy.md)。
+语义等价适用于表达不同但意义相同的答案。不能用主题相近替代等价，也不能忽略否定、范围或单位。若使用模型判定等价，比较器自己的错误和成本应计入，相关概率聚合见[语义熵](semantic-entropy.md)。
 
 ## 一致为何仍可能错误
 
@@ -50,12 +50,12 @@ $\mathbf 1[\cdot]$ 是指示函数，条件成立时取一，否则取零；$K$ 
 
 当前研究可以把答案频率作为透明的 sampling 基线，再分析重复错误、解析失败、多个有效答案与样本预算的影响。多数答案的稳定性是可观察信号，独立来源核查仍然承担不同作用。
 
-## 相关笔记（Related Notes）
+## 相关笔记
 
 - [Sampling 总览](index.md)
 - [不确定性与正确性](../foundations/uncertainty-vs-correctness.md)
 
-## 参考文献（References）
+## 参考文献
 
 - Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E. H., Narang, S., Chowdhery, A., Zhou, D. (2023). *Self-Consistency Improves Chain of Thought Reasoning in Language Models*. ICLR. [作者会议版本](https://arxiv.org/abs/2203.11171v4)
 - Xiong, M., Hu, Z., Lu, X., Li, Y., Fu, J., He, J., Hooi, B. (2024). *Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs*. ICLR. [Paper](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6733cf15e10e2cd1d59af033c3bb8507-Abstract-Conference.html)

@@ -5,11 +5,11 @@ tags:
   - uq
 ---
 
-# 研究总览（Research Overview）
+# 研究总览
 
-本博士研究以大语言模型（Large Language Model，LLM）与大型视觉语言模型（Large Vision-Language Model，LVLM）的可信性（Trustworthiness）为整体范围，长期关注模型输出的事实依据、对输入的忠实程度，以及面对输入变化时的可靠表现。其中，LVLM 的图文信息交互与医疗应用是长期研究的重要部分。
+本博士研究以 LLM 与 LVLM 的可信性（Trustworthiness）为整体范围，长期关注模型输出的事实依据、对输入的忠实程度，以及面对输入变化时的可靠表现。其中，LVLM 的图文信息交互与医疗应用（Medical Applications）是长期研究的重要部分。
 
-当前主要技术方向是不确定性量化（Uncertainty Quantification，UQ）。现阶段重点研究怎样利用输出、模型内部信息和证据，识别可能出现幻觉（Hallucination）或错误的回答，并同时考察置信度校准（Confidence Calibration）与计算成本。具体研究问题会通过方法比较和初步实验继续收敛，UQ 以外的技术路线也保留在整体范围内。
+当前主要技术方向是 UQ。现阶段重点研究怎样利用输出、模型内部信息和证据，识别可能出现幻觉（Hallucination）或错误的回答，并同时考察置信度校准（Confidence Calibration）与计算成本。具体研究问题会通过方法比较和初步实验（Preliminary Experiments）继续收敛，UQ 以外的技术路线也保留在整体范围内。
 
 本板块的四个页面分别承担以下职责：
 
