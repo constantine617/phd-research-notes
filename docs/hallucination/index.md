@@ -6,7 +6,7 @@ tags:
 
 # 可信性与幻觉（Trustworthiness & Hallucination）
 
-可信性是本知识库的长期研究主题。研究对象包括大语言模型（Large Language Model，LLM）和大型视觉语言模型（Large Vision-Language Model，LVLM），长期面向医疗应用中的可信生成与证据使用。它关心的不只是模型能答对多少题，还包括答案是否有依据、条件变化后行为是否稳定，以及失败能否被识别。NIST 的风险管理框架把可信性放在具体使用情境下讨论，并强调多个要求之间的协调（Tabassi, 2023）。
+可信性是本知识库的长期研究主题。研究对象包括大语言模型（Large Language Model，LLM）和大型视觉语言模型（Large Vision-Language Model，LVLM），长期面向医疗应用中的可信生成与证据使用。它关心的不只是模型能答对多少题，还包括答案是否有依据、条件变化后行为是否稳定，以及失败能否被识别。美国国家标准与技术研究院（National Institute of Standards and Technology，NIST） 的风险管理框架把可信性放在具体使用情境下讨论，并强调多个要求之间的协调（Tabassi, 2023）。
 
 ## 先区分三个维度
 
@@ -20,7 +20,7 @@ tags:
 
 [模型可信性](trustworthiness-overview.md) 先说明整体范围。幻觉是其中一类重要的失败表现，通常涉及错误、无依据或与证据不一致的生成内容；它的具体边界随任务和文献变化。格式错误、计算失误等不能不加区分地全部归入幻觉。
 
-本模块后续分别讨论幻觉的定义、分类、成因与失败表现、检测和缓解，并进一步界定正确性（Correctness）与可靠性（Reliability）。这些页面共同回答：判定的对象是什么、依据是什么，以及发现问题后可以采取什么行动。
+本模块分别讨论[幻觉定义](hallucination-definition.md)、[幻觉分类](hallucination-taxonomy.md)、[成因与失败表现](causes-failure-modes.md)、[检测](detection.md)和[缓解](mitigation.md)，并进一步界定[正确性（Correctness）与可靠性（Reliability）](reliability-correctness.md)。这些页面共同回答：判定的对象是什么、依据是什么，以及发现问题后可以采取什么行动。
 
 不确定性量化（Uncertainty Quantification，UQ）是当前研究输出可靠性的主要技术路线之一。使用任何信号之前，都需要先定义它要识别的错误。长期研究空间还包括训练、缓解、跨模态对齐和医疗应用，因此本模块也为这些方向提供共同的概念基础。
 

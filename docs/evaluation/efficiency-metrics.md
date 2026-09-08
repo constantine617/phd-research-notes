@@ -1,0 +1,45 @@
+---
+tags:
+  - evaluation
+  - efficiency
+  - uq
+---
+
+# 效率指标（Efficiency Metrics）
+
+不确定性量化（Uncertainty Quantification，UQ）的成本应覆盖从输入到最终分数的全部过程，包括回答生成、额外 sampling、验证与证据处理。只报告估计器最后一步的耗时，可能隐藏主要开销。
+
+Fadeeva et al. (2023) 的 LM-Polygraph 将多类生成式 UQ 方法置于统一接口中，说明比较时还要考虑所需模型信息及附加计算。本页据此组织成本记录，不把以下记录表归为论文提出的统一指标。
+
+## 至少记录哪些成本
+
+| 项目 | 记录方式与边界 |
+|---|---|
+| 实际耗时 | 从请求开始到最终结果；说明是否包括模型加载、排队、检索和缓存读取 |
+| 延迟（Latency） | 单请求时间及分位数；可另列首个 token 与完成时间 |
+| 吞吐量（Throughput） | 单位时间完成请求或 token 数，注明并发与批大小 |
+| 调用量 | 生成模型、验证器、自然语言推断（Natural Language Inference，NLI）模型与检索分别计数 |
+| token 用量 | 输入、输出和重复上下文；说明缓存计费与截断 |
+| 显存与内存 | 峰值、精度、批大小、上下文长度及缓存设置 |
+| 计算量 | 有明确实现依据时报告浮点运算数（Floating-point Operations，FLOPs）；不要由参数量直接充当实测计算量 |
+| 金钱成本 | 记录接口价格日期、计费规则、重试与总用量 |
+
+## 公平比较的条件
+
+固定硬件、软件版本、模型精度、批大小、输入输出长度和预热政策。加速器异步运行时要确保计时包含实际完成的工作。不同硬件或批处理实现下的原始耗时不能直接归因于方法优劣。
+
+多回答方法应报告实际生成条数，而不是只写“一个请求”：一个批请求也可能生成很多回答。序列两两比较可能增加 NLI 调用；共享中间结果或缓存可以减少开销，因此理论上限与实际调用量应分开。
+
+## 性能与预算共同解释
+
+在相同预算下比较错误识别或选择性表现，也可展示不同预算的效果变化。额外训练的探针应单列训练成本及所需标签，不能因测试时只读一次 hidden state 就称为完全无成本。
+
+冷缓存与热缓存结果分开；工具失败和重试计入端到端成本。若不能测得闭源接口内部 FLOPs 或显存，就报告可观察量与访问限制。
+
+## 相关笔记（Related Notes）
+
+- [高效 UQ](../efficient-uq/index.md)
+
+## 参考文献（References）
+
+- Fadeeva, E., Vashurin, R., Tsvigun, A., et al. (2023). *LM-Polygraph: Uncertainty Estimation for Language Models*. EMNLP: System Demonstrations, 446–461. [Paper](https://aclanthology.org/2023.emnlp-demo.41/)

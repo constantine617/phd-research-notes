@@ -5,13 +5,13 @@ tags:
   - representation
 ---
 
-# Hidden Representations
+# 内部表征（Hidden Representations）
 
-本页使用 hidden state 和 hidden representation 作为标准术语。讨论范围是基于因果 Transformer 的生成式大语言模型（Large Language Model，LLM），重点解释内部向量怎样与 token 位置、输出 logits 和可靠性研究联系起来。
+本页区分 hidden state 与内部表征。讨论范围是基于因果 Transformer 的生成式大语言模型（Large Language Model，LLM），重点解释内部向量怎样与 token 位置、输出 logits 和可靠性研究联系起来。
 
 ## Hidden state 是什么
 
-模型处理 token 序列时，每一层都会在各个 token 位置形成内部向量。在本页中，一个确定层、确定位置的向量称为 hidden state；hidden representation 则用于泛指这些内部表示，也可以指研究者从多个位置整理出的特征。
+模型处理 token 序列时，每一层都会在各个 token 位置形成内部向量。在本页中，一个确定层、确定位置的向量称为 hidden state；内部表征则用于泛指这些内部表示，也可以指研究者从多个位置整理出的特征。
 
 可以将第 $\ell$ 层、第 $t$ 个输入位置的 hidden state 记为：
 
@@ -63,9 +63,9 @@ logits 是面向词表候选的输出分数，其 softmax 决定下一个 token 
 
 为便于讨论，本页按能够读取的信息区分三种条件；这些名称的具体边界在不同论文中可能不同。
 
-- 黑箱访问（Black-box Access）：只能提交输入并获得输出文本，可以重复调用，但不能直接读取内部状态。
+- 黑盒访问（Black-box Access）：只能提交输入并获得输出文本，可以重复调用，但不能直接读取内部状态。
 - Log-prob access：还能读取部分或全部 token 的 log probability。可用范围取决于服务提供的信息，不能据此假定拥有完整词表分布。
-- 白箱 hidden-state 访问（White-box Hidden-state Access）：能够读取指定层和位置的内部状态。这里仅指访问 hidden state 的能力，不额外假定可以修改参数或取得梯度。
+- 白盒 hidden-state 访问（White-box Hidden-state Access）：能够读取指定层和位置的内部状态。这里仅指访问 hidden state 的能力，不额外假定可以修改参数或取得梯度。
 
 纯文本应用程序接口（Application Programming Interface，API）通常不直接提供 hidden state。开展相关研究需要能够运行并读取模型内部状态，或使用明确暴露这些状态的服务。
 
@@ -78,4 +78,4 @@ logits 是面向词表候选的输出分数，其 softmax 决定下一个 token 
 ## 参考文献（References）
 
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., Polosukhin, I. (2017). *Attention Is All You Need*. Advances in Neural Information Processing Systems, 30. [Paper](https://papers.nips.cc/paper/7181-attention-is-all-you-need)
-- Azaria, A., Mitchell, T. (2023). *The Internal State of an LLM Knows When It’s Lying*. Findings of the Association for Computational Linguistics: EMNLP 2023, 967–976. [Paper](https://aclanthology.org/2023.findings-emnlp.68/)
+- Azaria, A., Mitchell, T. (2023). *The Internal State of an LLM Knows When It’s Lying*. Findings of EMNLP, 967–976. [Paper](https://aclanthology.org/2023.findings-emnlp.68/)

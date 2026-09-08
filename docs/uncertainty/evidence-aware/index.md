@@ -4,7 +4,7 @@ tags:
   - evidence
 ---
 
-# 证据感知不确定性量化（Evidence-aware Uncertainty Quantification，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）：证据感知方法
 
 证据感知 UQ 把模型之外的可检查信息纳入估计，研究回答在什么证据条件下更可信。对于大语言模型（Large Language Model，LLM），外部证据（External Evidence）可以是来源文档、检索文本、知识库记录或核查结果。本页建立其与内部信号的关系，并作为通向多模态研究的概念接口。
 
@@ -54,7 +54,7 @@ Min et al. (2023) 的 FActScore 将长回答拆成原子事实，再评价指定
 
 视觉证据（Visual Evidence）与多模态证据（Multimodal Evidence）可以来自图像区域、文本描述及跨模态对应。已有的[视觉定位（Visual Grounding）](../../foundations/vision-language-models/visual-grounding.md)提供基础概念，但定位分数不自动等于主张正确概率。
 
-当前阶段只保留这一桥梁：先明确证据是什么、支持哪个主张，以及质量如何影响信号。完整多模态不确定性与医疗任务还需要各自的来源、标签和验证条件，不能由纯文本研究结果直接推出。
+这一桥梁首先要求明确证据是什么、支持哪个主张，以及质量如何影响信号。进一步内容见[多模态证据](../../multimodal/multimodal-evidence.md)和[医学评价](../../medical/medical-evaluation.md)；这些场景需要各自的来源、标签和验证条件，不能由纯文本研究结果直接推出。
 
 ## 相关笔记（Related Notes）
 

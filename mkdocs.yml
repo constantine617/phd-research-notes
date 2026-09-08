@@ -1,5 +1,5 @@
 site_name: PhD Research Notes
-site_description: Research notes on trustworthy LLMs and LVLMs, uncertainty, calibration, and multimodal reasoning.
+site_description: 围绕可信语言模型、幻觉、不确定性量化、置信度校准与多模态证据的博士研究笔记。
 site_url: https://constantine617.github.io/phd-research-notes/
 repo_name: constantine617/phd-research-notes
 repo_url: https://github.com/constantine617/phd-research-notes
@@ -8,17 +8,17 @@ docs_dir: docs
 
 theme:
   name: material
-  language: en
+  language: zh
   font: false
   palette:
     - scheme: default
       toggle:
         icon: material/weather-sunny
-        name: Switch to dark mode
+        name: 切换至深色模式
     - scheme: slate
       toggle:
         icon: material/weather-night
-        name: Switch to light mode
+        name: 切换至浅色模式
   features:
     - navigation.indexes
     - navigation.sections
@@ -57,7 +57,7 @@ extra_javascript:
 extra_css:
   - stylesheets/extra.css
 nav:
-  - Home: index.md
+  - 首页: index.md
   - 研究总览:
       - 总览: research-overview/index.md
       - 研究范围: research-overview/research-scope.md
@@ -71,7 +71,7 @@ nav:
           - 自回归生成: foundations/language-models/autoregressive-generation.md
           - Token 与序列概率: foundations/language-models/token-sequence-probability.md
           - 解码与 Sampling: foundations/language-models/decoding-sampling.md
-          - Hidden Representations: foundations/language-models/hidden-representations.md
+          - 内部表征: foundations/language-models/hidden-representations.md
       - 概率与信息论:
           - 总览: foundations/probability-information-theory/index.md
           - 概率与似然: foundations/probability-information-theory/probability-likelihood.md
@@ -93,7 +93,7 @@ nav:
       - 鲁棒性: hallucination/robustness.md
       - 幻觉定义: hallucination/hallucination-definition.md
       - 幻觉分类: hallucination/hallucination-taxonomy.md
-      - 成因与 Failure Modes: hallucination/causes-failure-modes.md
+      - 成因与失败表现: hallucination/causes-failure-modes.md
       - 幻觉检测: hallucination/detection.md
       - 幻觉缓解: hallucination/mitigation.md
       - 正确性与可靠性: hallucination/reliability-correctness.md
@@ -112,7 +112,7 @@ nav:
           - 自一致性: uncertainty/sampling-based/self-consistency.md
           - 预测熵: uncertainty/sampling-based/predictive-entropy.md
           - 语义熵: uncertainty/sampling-based/semantic-entropy.md
-      - Verbal Confidence: uncertainty/verbal-confidence/index.md
+      - 语言自报置信度: uncertainty/verbal-confidence/index.md
       - 置信度校准:
           - 总览: calibration/index.md
           - 校准方法: calibration/calibration-methods.md
@@ -120,9 +120,74 @@ nav:
       - 高效 UQ: efficient-uq/index.md
       - 基于表征的 UQ:
           - 总览: representation-uq/index.md
-          - Hidden State 与不确定性: representation-uq/hidden-state-uncertainty.md
+          - hidden state 与不确定性: representation-uq/hidden-state-uncertainty.md
       - 证据感知 UQ: uncertainty/evidence-aware/index.md
-  - Multimodal Research: multimodal/index.md
-  - Paper Notes: papers/index.md
-  - Research Log: research-log/index.md
-  - Glossary: glossary/index.md
+  - 评估与 Benchmark:
+      - 总览: evaluation/index.md
+      - 参考真值:
+          - 总览: evaluation/ground-truth/index.md
+          - 正确性判定: evaluation/ground-truth/correctness-definition.md
+          - 幻觉标签: evaluation/ground-truth/hallucination-labels.md
+          - 语义等价: evaluation/ground-truth/semantic-equivalence.md
+          - 人工评价: evaluation/ground-truth/human-evaluation.md
+          - LLM-as-a-Judge: evaluation/ground-truth/llm-as-a-judge.md
+      - 检测指标:
+          - 总览: evaluation/detection-metrics/index.md
+          - AUROC: evaluation/detection-metrics/auroc.md
+          - AUPRC: evaluation/detection-metrics/auprc.md
+          - 阈值指标: evaluation/detection-metrics/threshold-metrics.md
+      - 校准指标:
+          - 总览: evaluation/calibration-metrics/index.md
+          - ECE: evaluation/calibration-metrics/expected-calibration-error.md
+          - Brier Score: evaluation/calibration-metrics/brier-score.md
+      - 选择性预测:
+          - 总览: evaluation/selective-prediction/index.md
+          - Risk-Coverage: evaluation/selective-prediction/risk-coverage.md
+          - AURC: evaluation/selective-prediction/aurc.md
+      - 基础任务指标: evaluation/basic-task-metrics.md
+      - 效率指标: evaluation/efficiency-metrics.md
+      - 实验协议:
+          - 总览: evaluation/experimental-protocols/index.md
+          - 模型选择: evaluation/experimental-protocols/model-selection.md
+          - Sampling 设置: evaluation/experimental-protocols/sampling-settings.md
+          - 可复现性: evaluation/experimental-protocols/reproducibility.md
+          - 统计报告: evaluation/experimental-protocols/statistical-reporting.md
+      - Benchmark 选择:
+          - 总览: evaluation/benchmarks/index.md
+          - 文本 LLM: evaluation/benchmarks/text-llm-benchmarks.md
+          - LVLM: evaluation/benchmarks/lvlm-benchmarks.md
+          - 幻觉与事实核查: evaluation/benchmarks/hallucination-benchmarks.md
+          - 医学: evaluation/benchmarks/medical-benchmarks.md
+  - 多模态可信性:
+      - 总览: multimodal/index.md
+      - LVLM 幻觉: multimodal/lvlm-hallucination.md
+      - 多模态不确定性: multimodal/multimodal-uncertainty.md
+      - 跨模态一致性: multimodal/cross-modal-consistency.md
+      - 视觉定位与可信性: multimodal/grounding-for-trustworthiness.md
+      - 基于视觉支持的置信度: multimodal/grounding-based-confidence.md
+      - 多模态证据: multimodal/multimodal-evidence.md
+  - 医学 AI 应用:
+      - 总览: medical/index.md
+      - 医学 LVLM: medical/medical-lvlms.md
+      - 医学幻觉: medical/medical-hallucination.md
+      - 临床可靠性研究: medical/clinical-reliability.md
+      - 医学评价: medical/medical-evaluation.md
+  - 论文笔记:
+      - 总览: papers/index.md
+      - Guo 2017 · 置信度校准: papers/2017-guo-calibration.md
+      - Tian 2023 · 语言自报置信度: papers/2023-tian-verbal-confidence.md
+      - Wang 2023 · 自一致性: papers/2023-wang-self-consistency.md
+      - Kuhn 2023 · 语义不确定性: papers/2023-kuhn-semantic-uncertainty.md
+      - Farquhar 2024 · 语义熵: papers/2024-farquhar-semantic-entropy.md
+      - Manakul 2023 · SelfCheckGPT: papers/2023-manakul-selfcheckgpt.md
+      - Azaria 2023 · 内部表征: papers/2023-azaria-internal-state.md
+      - Kossen 2024 · 语义熵探针: papers/2024-kossen-semantic-entropy-probes.md
+      - Min 2023 · FActScore: papers/2023-min-factscore.md
+      - Li 2023 · POPE: papers/2023-li-pope.md
+      - Khan 2024 · 一致性与不确定性: papers/2024-khan-consistency-uncertainty.md
+      - Favero 2024 · M3ID: papers/2024-favero-m3id.md
+      - Li 2023 · LLaVA-Med: papers/2023-li-llava-med.md
+      - Yu 2023 · 放射报告评价: papers/2023-yu-radiology-evaluation.md
+  - 研究成果: research-outputs/index.md
+  - 研究日志: research-log/index.md
+  - 术语表: glossary/index.md

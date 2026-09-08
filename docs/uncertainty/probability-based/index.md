@@ -4,7 +4,7 @@ tags:
   - probability
 ---
 
-# 基于概率的不确定性量化（Probability-based Uncertainty Quantification，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）：基于概率的方法
 
 这类方法把大语言模型（Large Language Model，LLM）分配的概率转化为不确定性或置信度信号。基础概率计算见[token 与序列概率](../../foundations/language-models/token-sequence-probability.md)；本页关注如何选择、聚合和解释这些量。模型分配给语言输出的概率，不自动等于输出正确的概率。
 
@@ -21,7 +21,7 @@ u_{\mathrm{avg}}(x,y)
 \label{eq:probability-average-nll}
 $$
 
-其中，$x$ 为输入，$y$ 为长度为 $L$ 的回答，$y_t$ 是第 $t$ 个 token，$y_{<t}$ 为此前缀，$\theta$ 为模型参数。本页使用自然对数。公式 $\eqref{eq:probability-average-nll}$ 越大，表示这些已选 token 平均越不符合所评分的模型分布；它不是错误概率。
+其中，$x$ 为输入，$y$ 为长度为 $L>0$ 的回答，$y_t$ 是第 $t$ 个 token，$y_{<t}$ 为此前缀，$\theta$ 为模型参数。本页使用自然对数。公式 $\eqref{eq:probability-average-nll}$ 越大，表示这些已选 token 平均越不符合所评分的模型分布；它不是错误概率。
 
 对该分数取负再取指数，得到几何平均 token 概率。这可以作为长度归一化似然分数（Length-normalized Likelihood Score），但在所有可能回答上通常不归一。Kuhn et al. (2023) 指出，长度归一化的价值依赖任务：它缓解长度主导的比较，也可能削弱长回答实际包含更多不确定内容的信息。
 
@@ -51,7 +51,7 @@ Fadeeva et al. (2023) 将单次预测的概率信息作为一类容易实现的�
 
 ## 从可计算到有用
 
-概率信号可能受常见措辞、长度和局部语法影响，对事实错误的敏感度需要验证。Tian et al. (2023) 在其人类反馈 fine-tuning 模型与问答设置中观察到，语言自报置信度常比所比较的模型概率更好校准；这不能推成任何模型上的固定优劣顺序。
+概率信号可能受常见措辞、长度和局部语法影响，对事实错误的敏感度需要验证。Tian et al. (2023) 在其人类反馈 fine-tuning 模型与问答设置中，比较了语言自报置信度与答案概率基线。其 Label prob. 基线通过多次 sampling 和语义等价判断估计答案频率，并返回众数答案；不能把这一比较写成自报置信度普遍优于本页的 token 概率或序列似然。具体方法与结果范围见[论文笔记](../../papers/2023-tian-verbal-confidence.md)。
 
 当前研究可将这些分数作为可解释、成本清楚的起点，再检查关键主张是否被平均值掩盖、归一化是否改变排序，以及[校准](../../calibration/index.md)能否改善概率解释。若估计对象仍是字符串常见程度，仅做数值变换并不会把它自动变成事实核查器。
 

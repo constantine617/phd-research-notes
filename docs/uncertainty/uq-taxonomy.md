@@ -1,10 +1,9 @@
 ---
 tags:
   - uq
-  - uncertainty
 ---
 
-# 不确定性量化分类（Uncertainty Quantification Taxonomy，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）分类
 
 大语言模型（Large Language Model，LLM）的 UQ 没有唯一通用分类。一个方法可以同时使用多次生成、token 概率和语义比较；文件夹只能给它一个主要入口。**本页是知识库用于组织和比较方法的工作分类（Working Taxonomy），不是领域唯一标准。**
 

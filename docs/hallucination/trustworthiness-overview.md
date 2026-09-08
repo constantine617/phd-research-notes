@@ -12,7 +12,7 @@ tags:
 
 可信性是一个统摄性概念。不同人工智能（Artificial Intelligence，AI）框架、自然语言处理（Natural Language Processing，NLP）研究和应用领域，选取的维度、命名与层级并不完全一致。
 
-NIST AI RMF 1.0 列出的特征包括有效与可靠、安全、信息安全与韧性、可问责与透明、可解释与可理解、隐私增强，以及对有害偏差的管理。该框架强调，这些特征需要结合使用情境与相互之间的权衡来判断（Tabassi, 2023）。这是一个机构提出的风险管理框架，不是所有研究都必须采用的唯一分类。
+美国国家标准与技术研究院（National Institute of Standards and Technology，NIST） 人工智能风险管理框架（Artificial Intelligence Risk Management Framework，AI RMF）1.0 列出的特征包括有效与可靠、安全、信息安全与韧性、可问责与透明、可解释与可理解、隐私增强，以及对有害偏差的管理。该框架强调，这些特征需要结合使用情境与相互之间的权衡来判断（Tabassi, 2023）。这是一个机构提出的风险管理框架，不是所有研究都必须采用的唯一分类。
 
 安全性（Safety）、公平性（Fairness）、隐私（Privacy）、透明性（Transparency）和可解释性（Interpretability）都属于更宽的讨论范围。本知识库当前集中在生成输出与证据之间的关系，但这个取舍不意味着其余维度不重要，也不意味着仅检查生成内容就完成了整个系统的可信性评估。
 

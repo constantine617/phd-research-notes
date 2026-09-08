@@ -4,7 +4,7 @@ tags:
   - sampling
 ---
 
-# 基于 Sampling 的不确定性量化（Sampling-based Uncertainty Quantification，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）：基于 sampling 的方法
 
 这类方法给大语言模型（Large Language Model，LLM）相同的 prompt，多次生成回答，再比较一致与分歧。直觉是观察单次回答隐藏的其他可能输出；估计器真正测到什么，则由 sampling 分布、答案比较规则和聚合方式共同决定。
 

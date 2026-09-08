@@ -1,7 +1,6 @@
 ---
 tags:
   - uq
-  - uncertainty
 ---
 
 # 认知不确定性与数据不确定性（Epistemic and Aleatoric Uncertainty）

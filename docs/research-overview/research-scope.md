@@ -4,7 +4,7 @@ tags:
   - trustworthiness
   - hallucination
   - multimodal
-  - medical-ai
+  - medical
 ---
 
 # 研究范围（Research Scope）
@@ -18,7 +18,7 @@ tags:
 - 事实性（Factuality）：输出是否符合可核查的事实与领域知识。
 - 忠实性（Faithfulness）：输出中的陈述能否由给定文本、图像及任务允许的依据支持。
 - 鲁棒性（Robustness）：当输入受到不改变任务含义的细微扰动时，模型能否维持合理表现，避免产生不应出现的错误。
-- 模型可靠性（Model Reliability）：在具体任务中，如何识别可能不可信的输出，并理解评估方法的适用边界。
+- 模型可靠性（Model Reliability）：模型在给定条件和时间范围内能否持续满足任务要求，以及失败能否被识别和妥善处理；具体边界见[正确性与可靠性](../hallucination/reliability-correctness.md)。
 
 事实性与忠实性需要分别考察。[Maynez et al. (2020)](https://aclanthology.org/2020.acl-main.173/) 在摘要任务中讨论了内容缺乏原文支持、但仍可能符合事实的情况。本页借用这一判断角度区分“是否符合事实”和“是否有输入依据”，具体任务仍需明确允许使用哪些信息。
 
@@ -50,4 +50,4 @@ UQ 是整体研究中的一条技术路线。多模态对齐、鲁棒性评估�
 
 ## 参考文献（References）
 
-- Maynez, J., Narayan, S., Bohnet, B., McDonald, R. (2020). *On Faithfulness and Factuality in Abstractive Summarization*. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 1906–1919. [Paper](https://aclanthology.org/2020.acl-main.173/)
+- Maynez, J., Narayan, S., Bohnet, B., McDonald, R. (2020). *On Faithfulness and Factuality in Abstractive Summarization*. ACL, 1906–1919. [Paper](https://aclanthology.org/2020.acl-main.173/)

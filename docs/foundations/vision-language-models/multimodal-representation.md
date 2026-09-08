@@ -59,7 +59,7 @@ $j$ 是文本 token 位置，$d_t$ 是文本表示维度，$\mathbf{t}_j$ 可以
 
 表征为后续 [跨模态对齐](cross-modal-alignment.md) 提供计算对象，也为 [视觉定位](visual-grounding.md) 提供可能的区域和特征基础。但有表示、可匹配和有证据支持，是逐步增加要求的不同判断。
 
-对不确定性量化（Uncertainty Quantification，UQ），内部表示可以作为研究输入，帮助检验模型是否保留并利用了相关视觉信息。当前不预设哪一层、哪一种表示最好，也不将表示维度或融合复杂度直接当作可靠性指标。语言侧 hidden state 的基础见 [Hidden Representations](../language-models/hidden-representations.md)。
+对不确定性量化（Uncertainty Quantification，UQ），内部表示可以作为研究输入，帮助检验模型是否保留并利用了相关视觉信息。当前不预设哪一层、哪一种表示最好，也不将表示维度或融合复杂度直接当作可靠性指标。语言侧 hidden state 的基础见 [内部表征](../language-models/hidden-representations.md)。
 
 ## 参考文献（References）
 

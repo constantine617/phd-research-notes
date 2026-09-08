@@ -5,9 +5,9 @@ tags:
   - lvlm
 ---
 
-# 大型视觉语言模型（Large Vision-Language Models，LVLMs）
+# 大型视觉语言模型（Large Vision-Language Model，LVLM）
 
-LVLMs 将视觉输入与大语言模型（Large Language Model，LLM）的语言处理能力结合，使回答可以同时以图像和文本为条件。本页主要讨论输入图像及 prompt、输出文本的生成式系统。这个工作范围不意味着所有视觉语言模型都采用语言生成架构，也不以某个统一参数规模界定“大型”。
+LVLM 将视觉输入与大语言模型（Large Language Model，LLM）的语言处理能力结合，使回答可以同时以图像和文本为条件。本页主要讨论输入图像及 prompt、输出文本的生成式系统。这个工作范围不意味着所有视觉语言模型都采用语言生成架构，也不以某个统一参数规模界定“大型”。
 
 ## 一个最小概念结构
 
@@ -23,13 +23,13 @@ flowchart TD
     L --> O["文本输出"]
 ```
 
-这是概念结构，不是所有 LVLMs 必须遵循的固定流水线。箭头表示信息传递，不代表训练阶段；连接和交互也可能分布在多个层中。理解一个具体模型时，需要回到论文确认视觉信息在哪里注入、哪些模块被更新，以及语言模型实际能访问哪些表示。
+这是概念结构，不是所有 LVLM 必须遵循的固定流水线。箭头表示信息传递，不代表训练阶段；连接和交互也可能分布在多个层中。理解一个具体模型时，需要回到论文确认视觉信息在哪里注入、哪些模块被更新，以及语言模型实际能访问哪些表示。
 
 ## 视觉编码器
 
 视觉编码器（Vision Encoder）把图像转换为可供后续网络处理的特征或 embedding。输出可以是一组 patch 特征，也可以经过汇聚或其他处理。patch 是图像的局部块，不必恰好对应一个完整对象；一个对象可能跨越多个 patch，同一 patch 也可能含有不同内容。
 
-LVLMs 可以复用预训练的视觉编码器。比如 Liu et al. (2023) 使用视觉 Transformer（Vision Transformer，ViT）编码图像，再把视觉特征接入语言模型。这里不展开 ViT 的完整结构，只需知道编码器输出的是计算得到的表示，而不是一份已经保证正确的对象清单。
+LVLM 可以复用预训练的视觉编码器。比如 Liu et al. (2023) 使用视觉 Transformer（Vision Transformer，ViT）编码图像，再把视觉特征接入语言模型。这里不展开 ViT 的完整结构，只需知道编码器输出的是计算得到的表示，而不是一份已经保证正确的对象清单。
 
 对于“有没有狗”“狗是什么颜色”“狗在椅子的哪一侧”，需要的视觉信息粒度不同。因此检查编码器时，除输出维度外，还应考虑空间位置、局部属性及关系信息是否能供后续任务使用。具体信息保留问题见 [多模态表征](multimodal-representation.md)。
 
@@ -69,4 +69,4 @@ LLaVA 原论文先训练连接投影，再在视觉指令数据上更新投影�
 
 - Liu, H., Li, C., Wu, Q., Lee, Y. J. (2023). *Visual Instruction Tuning*. Advances in Neural Information Processing Systems, 36, 34892–34916. [Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/6dcf277ea32ce3288914faf369fe6de0-Abstract-Conference.html)
 - Li, J., Li, D., Savarese, S., Hoi, S. (2023a). *BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models*. Proceedings of the 40th International Conference on Machine Learning, PMLR 202, 19730–19742. [Paper](https://proceedings.mlr.press/v202/li23q.html)
-- Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W. X., Wen, J.-R. (2023b). *Evaluating Object Hallucination in Large Vision-Language Models*. Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, 292–305. [Paper](https://aclanthology.org/2023.emnlp-main.20/)
+- Li, Y., Du, Y., Zhou, K., Wang, J., Zhao, W. X., Wen, J.-R. (2023b). *Evaluating Object Hallucination in Large Vision-Language Models*. EMNLP, 292–305. [Paper](https://aclanthology.org/2023.emnlp-main.20/)

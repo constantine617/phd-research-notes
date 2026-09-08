@@ -1,11 +1,10 @@
 ---
 tags:
   - uq
-  - uncertainty
   - llm
 ---
 
-# 大语言模型中的不确定性（Uncertainty in Large Language Models，LLMs）
+# 大语言模型（Large Language Model，LLM）中的不确定性
 
 开放生成允许模型给出长度不同、措辞不同且都有效的回答，因此不能把固定类别分类中的直觉原样搬过来。不确定性量化（Uncertainty Quantification，UQ）需要先说明随机变化发生在哪个空间，以及我们关心哪些变化。Kuhn et al. (2023) 将语言表达与含义的区别作为这一问题的核心。
 

@@ -4,7 +4,7 @@ tags:
   - representation
 ---
 
-# 基于表征的不确定性量化（Representation-based Uncertainty Quantification，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）：基于表征的方法
 
 这类方法从大语言模型（Large Language Model，LLM）的内部特征构造分数，研究输出概率之外是否还有与可靠性相关的信息。Hidden state 的基础机制见[内部表征](../foundations/language-models/hidden-representations.md)；本页关注如何选择特征、建立评分函数，以及这些分数能支持什么结论。
 
@@ -54,7 +54,7 @@ Kossen et al. (2024) 的 Semantic Entropy Probes 使用多次生成计算的语�
 
 ## 相关笔记（Related Notes）
 
-- [Hidden State 与不确定性](hidden-state-uncertainty.md)
+- [hidden state 与不确定性](hidden-state-uncertainty.md)
 - [高效 UQ](../efficient-uq/index.md)
 
 ## 参考文献（References）

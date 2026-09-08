@@ -47,7 +47,7 @@ tags:
 - [自回归生成（Autoregressive Generation）](autoregressive-generation.md)：解释序列怎样逐步生成，以及各步之间的依赖。
 - [Token 与序列概率（Token and Sequence Probability）](token-sequence-probability.md)：定义模型概率、log probability 和长度相关分数。
 - [解码与 Sampling（Decoding and Sampling）](decoding-sampling.md)：说明概率分布如何变成实际输出，以及常见生成设置的作用。
-- [Hidden Representations](hidden-representations.md)：解释内部表示、输出投影与模型访问条件。
+- [内部表征](hidden-representations.md)：解释内部表示、输出投影与模型访问条件。
 
 ## 参考文献（References）
 

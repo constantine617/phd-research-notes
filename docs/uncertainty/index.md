@@ -1,7 +1,6 @@
 ---
 tags:
   - uq
-  - uncertainty
 ---
 
 # 不确定性量化（Uncertainty Quantification，UQ）
@@ -25,11 +24,11 @@ UQ 不等于[幻觉检测（Hallucination Detection）](../hallucination/detecti
 | 概念边界 | [LLM 中的不确定性](foundations/uncertainty-in-llms.md)、[认知与数据不确定性](foundations/epistemic-aleatoric.md)、[置信度与不确定性](foundations/confidence-vs-uncertainty.md)、[不确定性与正确性](foundations/uncertainty-vs-correctness.md) |
 | 概率信息 | [基于概率的 UQ](probability-based/index.md) |
 | 多次生成 | [Sampling 总览](sampling-based/index.md)、[自一致性（Self-Consistency）](sampling-based/self-consistency.md)、[预测熵（Predictive Entropy）](sampling-based/predictive-entropy.md)、[语义熵](sampling-based/semantic-entropy.md) |
-| 语言自报 | [Verbal Confidence](verbal-confidence/index.md) |
+| 语言自报 | [语言自报置信度](verbal-confidence/index.md) |
 | 分数的概率解释 | [校准总览](../calibration/index.md)、[方法类别](../calibration/calibration-methods.md)、[后处理校准](../calibration/post-hoc-calibration.md) |
-| 当前技术兴趣 | [高效 UQ](../efficient-uq/index.md)、[表征方法](../representation-uq/index.md)、[Hidden State 与不确定性](../representation-uq/hidden-state-uncertainty.md)、[证据感知 UQ](evidence-aware/index.md) |
+| 当前技术兴趣 | [高效 UQ](../efficient-uq/index.md)、[表征方法](../representation-uq/index.md)、[hidden state 与不确定性](../representation-uq/hidden-state-uncertainty.md)、[证据感知 UQ](evidence-aware/index.md) |
 
-方法比较同时考察信号是否有用、数值如何解释，以及获得信号所付出的全部代价。本模块建立这些方法知识；具体评估指标、完整多模态方法与医疗任务留在各自后续模块。
+方法比较同时考察信号是否有用、数值如何解释，以及获得信号所付出的全部代价。本模块建立方法知识；具体指标与实验协议见[评估与 benchmark](../evaluation/index.md)，视觉证据和应用边界分别见[多模态可信性](../multimodal/index.md)与[医学应用](../medical/index.md)。
 
 ## 参考文献（References）
 

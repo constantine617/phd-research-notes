@@ -4,9 +4,9 @@ tags:
   - confidence
 ---
 
-# Verbal Confidence
+# 语言自报置信度（Verbal Confidence）
 
-本页使用语言自报置信度（Verbal Confidence / Verbalized Confidence）作为标准术语，指模型用自然语言或数字表达对某个回答的把握程度。对大语言模型（Large Language Model，LLM）的不确定性量化（Uncertainty Quantification，UQ）而言，这是一类可通过文本接口取得的信号；它不等于 token 概率，也不自动等于经过校准的置信度。
+语言自报置信度指模型用自然语言或数字表达对某个回答的把握程度；文献中也称 Verbalized Confidence。对大语言模型（Large Language Model，LLM）的不确定性量化（Uncertainty Quantification，UQ）而言，这是一类可通过文本接口取得的信号；它不等于 token 概率，也不自动等于经过校准的置信度。
 
 ## 表达形式与所问事件
 
@@ -22,7 +22,7 @@ tags:
 
 Lin et al. (2022) 研究第三种方式，在特定数学任务上训练模型用语言表达自身答案的不确定性，并比较了语言概率与 logits 信号。该结果不能直接解释为未经专门训练的任意模型都能自然输出准确概率。
 
-Tian et al. (2023) 则研究通过 prompt 从接受人类反馈 fine-tuning 的模型中获取置信度。在其模型和问答 benchmark 中，自报分数通常比所比较的条件概率更好校准；先考虑多个候选答案也可帮助改善结果。这是具体实验发现，并非对所有任务的通用保证。
+Tian et al. (2023) 则研究通过 prompt 从接受人类反馈 fine-tuning 的模型中获取置信度。在其部分模型和问答 benchmark 上，合适的自报策略改善了校准；先考虑多个候选答案也可帮助改善结果。其 Label prob. 基线通过多次 sampling、语义等价判断和众数答案选择构造，不能概括为直接读取 token 概率。比较还需考虑答案选择与调用预算，具体边界见[论文笔记](../../papers/2023-tian-verbal-confidence.md)。
 
 ## Prompt 为什么会影响数值
 

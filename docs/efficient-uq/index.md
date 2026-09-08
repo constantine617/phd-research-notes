@@ -4,7 +4,7 @@ tags:
   - efficiency
 ---
 
-# 高效不确定性量化（Efficient Uncertainty Quantification，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）：高效方法
 
 高效 UQ 研究在给定计算、延迟和存储预算下，怎样保留有用的不确定性信息。对于大语言模型（Large Language Model，LLM），主要代价往往来自生成与辅助处理，而不只是最后计算一个分数。当前 PhD 将效率作为重要技术兴趣，比较对象是完整流程的效果与代价。
 
@@ -56,7 +56,7 @@ Kossen et al. (2024) 的 Semantic Entropy Probes 是一个具体例子：训练�
 ## 相关笔记（Related Notes）
 
 - [基于概率的 UQ](../uncertainty/probability-based/index.md)
-- [Hidden State 与不确定性](../representation-uq/hidden-state-uncertainty.md)
+- [hidden state 与不确定性](../representation-uq/hidden-state-uncertainty.md)
 
 ## 参考文献（References）
 

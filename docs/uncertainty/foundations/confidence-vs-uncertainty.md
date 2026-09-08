@@ -45,7 +45,7 @@ Geng et al. (2024) 区分相对置信度与绝对概率解释。前者关心哪�
 ## 相关笔记（Related Notes）
 
 - [基于概率的 UQ](../probability-based/index.md)
-- [Verbal Confidence](../verbal-confidence/index.md)
+- [语言自报置信度](../verbal-confidence/index.md)
 
 ## 参考文献（References）
 

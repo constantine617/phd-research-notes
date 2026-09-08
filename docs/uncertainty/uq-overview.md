@@ -1,10 +1,9 @@
 ---
 tags:
   - uq
-  - uncertainty
 ---
 
-# 不确定性量化总览（Uncertainty Quantification Overview，UQ）
+# 不确定性量化（Uncertainty Quantification，UQ）总览
 
 在大语言模型（Large Language Model，LLM）中，UQ 首先要确定“对什么不确定”。同一个回答可以词语选择稳定、事实依据不足，也可以措辞多样而含义完全一致。估计器输出的数值只有与目标、观察条件及用途一起说明，才有可解释的含义。Geng et al. (2024) 将生成任务中的置信度估计与校准分别讨论，这一区分也是本页的出发点。
 
@@ -36,7 +35,7 @@ Kadavath et al. (2022) 区分了对具体回答的自我评价与问题层面的
 
 ## 分数如何进入决策
 
-不确定性可以用于错误检测、[幻觉检测](../hallucination/detection.md)、弃答（Abstention）、模型路由（Routing）与人工复核（Human Review）。例如，一个低成本分数可先筛选疑难回答，再决定是否追加检索。这样的设计同时改变了成本与最终交付的回答群体。
+不确定性可以用于错误检测、[幻觉检测](../hallucination/detection.md)、拒答（Abstention）、模型路由（Routing）与人工复核（Human Review）。例如，一个低成本分数可先筛选疑难回答，再决定是否追加检索。这样的设计同时改变了成本与最终交付的回答群体。
 
 选择性预测（Selective Prediction）研究只对部分输入作答时的风险与覆盖率关系（Geifman and El-Yaniv, 2017）。将其用于 LLM 时，需要重新定义拒答、部分作答和回答合格标准。分类场景的保证不能直接迁移到任意开放生成任务。
 

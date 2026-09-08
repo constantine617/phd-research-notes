@@ -4,9 +4,9 @@ tags:
   - representation
 ---
 
-# Hidden State 与不确定性
+# hidden state 与不确定性
 
-在大语言模型（Large Language Model，LLM）中，hidden state 可以作为不确定性量化（Uncertainty Quantification，UQ）的输入特征。问题不是为每个向量赋予一个固定“置信度含义”，而是明确选取哪个计算位置，再验证从该位置能否预测目标。表征本身的机制复用[Hidden Representations](../foundations/language-models/hidden-representations.md)。
+在大语言模型（Large Language Model，LLM）中，hidden state 可以作为不确定性量化（Uncertainty Quantification，UQ）的输入特征。问题不是为每个向量赋予一个固定“置信度含义”，而是明确选取哪个计算位置，再验证从该位置能否预测目标。表征本身的机制复用[内部表征](../foundations/language-models/hidden-representations.md)。
 
 ## token、层与观察时点
 
