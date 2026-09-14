@@ -12,6 +12,7 @@ tags:
 
 - [Guo et al. (2017)：现代网络的校准与温度缩放](2017-guo-calibration.md)。
 - [Tian et al. (2023)：通过 prompt 获取语言自报置信度](2023-tian-verbal-confidence.md)。
+- [Lamb et al. (2026)：学习 token 温度以改善语义 UQ](2026-lamb-semantic-calibration.md "文献引用")。
 
 ## 多次生成的分歧意味着什么
 
