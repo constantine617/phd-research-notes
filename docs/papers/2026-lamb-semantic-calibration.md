@@ -117,12 +117,12 @@ $N$ 是验证样本数，$c_j$ 为所选答案簇的置信度，$r_j\in\{0,1\}$ 
 | 方法标识 | 权重 $w_i$ | 作用 |
 |---|---|---|
 | E-SC | $\lvert C_i\rvert$ | 按样本频数赋分 |
-| L-SC | $s_i$ | 累加长度归一化似然 |
-| ML-SC | $s_i/\lvert C_i\rvert$ | 改用簇内均值 |
-| B-SC | $\pi_iL_i$ | 组合经验先验与似然乘积 |
-| T-SC | $(\pi_iL_i)^{1/\alpha}$ | 对组合权重调幂 |
-| IC-SC | $s_i\exp[-H(r_i)]$，$r_i(y)=a_y/s_i$ | 用簇内归一化权重的熵调整分数 |
-| G-SC | $\pi_i\exp(-\alpha E_i)$，$E_i=-\log L_i$ | 用 NLL 定义能量 |
+| 基于似然的语义置信度（Likelihood-Based Semantic Confidence，L-SC） | $s_i$ | 累加长度归一化似然 |
+| 基于平均似然的语义置信度（Mean Likelihood-Based Semantic Confidence，ML-SC） | $s_i/\lvert C_i\rvert$ | 改用簇内均值 |
+| 贝叶斯语义置信度（Bayesian Semantic Confidence，B-SC） | $\pi_iL_i$ | 组合经验先验与似然乘积 |
+| 温度化贝叶斯后验（Tempered-Bayesian Posterior，T-SC） | $(\pi_iL_i)^{1/\alpha}$ | 对组合权重调幂 |
+| 内部一致性语义置信度（Internal Consistency Semantic Confidence，IC-SC） | $s_i\exp[-H(r_i)]$，$r_i(y)=a_y/s_i$ | 用簇内归一化权重的熵调整分数 |
+| Gibbs 语义置信度（Gibbs Semantic Confidence，G-SC） | $\pi_i\exp(-\alpha E_i)$，$E_i=-\log L_i$ | 用 NLL 定义能量 |
 
 这里 $\alpha>0$ 是赋分方式自身的参数，与 token 温度 $\tau$ 不同。长度归一化似然的聚合不是对全部可能序列求和得到的严格语义概率；B-SC 也只应按作者的贝叶斯启发式方法理解。
 
