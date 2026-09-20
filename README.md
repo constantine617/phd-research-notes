@@ -25,11 +25,13 @@ uv run --locked --no-dev mkdocs build --strict
 
 ## Content and features
 
-Write public Markdown in `docs/` and update the handwritten `nav` in `mkdocs.yml`. Research Log is an ordinary directory. Initial topic pages are placeholders.
+Write public Markdown in `docs/` and update the handwritten `nav` in `mkdocs.yml`. The site contains topic explanations, evaluation guidance, and paper notes. Research Log is an ordinary directory; its index and Research Outputs state whether public entries have been added.
 
-Math uses PyMdown arithmatex and MathJax 3.2.2 from jsDelivr. Mermaid uses Material's standard superfences integration. Tags and search are built-in plugins. Light/dark mode and responsive navigation use the native theme; custom CSS is empty. Instant navigation is disabled so each page loads and typesets normally.
+Math uses PyMdown arithmatex and MathJax 3.2.2 from jsDelivr. Mermaid uses Material's standard superfences integration. Tags and search are built-in plugins; pinned `jieba` supplies Chinese word segmentation to Material's search index. Light/dark mode and responsive navigation use the native theme. Custom CSS keeps author-year citation links visually consistent with the surrounding prose and provides a visible keyboard-focus outline. Instant navigation is disabled so each page loads and typesets normally.
 
-CDN availability is required for math and diagram rendering. Infrastructure is frozen at [Infrastructure Baseline v1](INFRASTRUCTURE_BASELINE.md), identified by the `infra-v1` Git tag.
+CDN availability is required for math and diagram rendering. The original architecture and pinned MkDocs/Material versions remain as recorded in [Infrastructure Baseline v1](INFRASTRUCTURE_BASELINE.md), identified by the `infra-v1` Git tag. The September 2026 search fix adds `jieba==0.42.1`; the baseline document retains its historical validation results.
+
+Missing internal anchors are configured as warnings, so `mkdocs build --strict` blocks publication when a heading change breaks a page link. Before publishing search changes, check Chinese keywords, full phrases, English terms, and abbreviations in the browser (for example, `可靠性`, `临床可靠性`, `语义熵`, `Semantic Entropy`, `校准`, and `ECE`).
 
 ## Deployment
 

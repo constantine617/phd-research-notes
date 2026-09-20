@@ -60,6 +60,8 @@ RAG 将检索内容加入生成条件。[Lewis et al. (2020)](https://papers.nip
 
 - [幻觉检测](../../hallucination/detection.md)
 - [表征方法](../../representation-uq/index.md)
+- [Min 2023：FActScore 的原子事实支持评价](../../papers/2023-min-factscore.md)
+- [幻觉标签与证据范围](../../evaluation/ground-truth/hallucination-labels.md)
 
 ## 参考文献
 

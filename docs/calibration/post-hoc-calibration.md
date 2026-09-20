@@ -51,6 +51,8 @@ Platt 式缩放用带斜率和截距的 sigmoid 映射一个标量分数。它�
 
 - [校准总览](index.md)
 - [Decoding 与 Sampling](../foundations/language-models/decoding-sampling.md)
+- [Guo 2017：固定分类 logits 上的温度缩放](../papers/2017-guo-calibration.md)
+- [Lamb 2026：将学习温度用于重新生成答案](../papers/2026-lamb-semantic-calibration.md)
 
 ## 参考文献
 

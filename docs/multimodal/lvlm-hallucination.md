@@ -37,6 +37,7 @@ LVLM 的幻觉不仅涉及世界知识错误，还可能涉及对图像内容的
 
 ## 相关笔记
 
+- [POPE 论文笔记：物体存在性评价与标签边界](../papers/2023-li-pope.md)
 - [视觉语言 Benchmark](../evaluation/benchmarks/lvlm-benchmarks.md)
 
 ## 参考文献

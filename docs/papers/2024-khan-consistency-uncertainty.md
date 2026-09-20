@@ -6,7 +6,7 @@ tags:
   - multimodal
 ---
 
-# Consistency and Uncertainty: Identifying Unreliable Responses From Black-Box VLM for Selective 视觉问答（Visual Question Answering，VQA）
+# Consistency and Uncertainty: Identifying Unreliable Responses From Black-Box Vision-Language Models for Selective Visual Question Answering
 
 ## 文献信息
 

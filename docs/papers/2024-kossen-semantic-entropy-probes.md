@@ -7,7 +7,7 @@ tags:
   - efficiency
 ---
 
-# Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLM
+# Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
 
 ## 文献信息
 

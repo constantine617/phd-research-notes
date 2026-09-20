@@ -90,6 +90,9 @@ $K$ 为生成次数，$n_j$ 为第 $j$ 类的样本数，且 $\sum_jn_j=K$。公
 - [预测熵](predictive-entropy.md)
 - [高效 UQ](../../efficient-uq/index.md)
 - [基于表征的 UQ](../../representation-uq/index.md)
+- [Kuhn 2023：语义不确定性的原始方法](../../papers/2023-kuhn-semantic-uncertainty.md)
+- [Farquhar 2024：语义熵与幻觉检测](../../papers/2024-farquhar-semantic-entropy.md)
+- [语义等价判定](../../evaluation/ground-truth/semantic-equivalence.md)
 
 ## 参考文献
 

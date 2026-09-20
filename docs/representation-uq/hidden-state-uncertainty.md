@@ -62,6 +62,8 @@ $\mathcal I$ 是选定位置集合，$P$ 为 pooling 操作，$\mathbf r$ 为所
 
 - [表征方法总览](index.md)
 - [置信度与不确定性](../uncertainty/foundations/confidence-vs-uncertainty.md)
+- [Kossen 2024：回答前后表征与语义熵探针](../papers/2024-kossen-semantic-entropy-probes.md)
+- [模型选择与访问条件](../evaluation/experimental-protocols/model-selection.md)
 
 ## 参考文献
 

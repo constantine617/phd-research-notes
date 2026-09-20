@@ -6,7 +6,7 @@ tags:
   - sampling
 ---
 
-# SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative LLM
+# SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models
 
 ## 文献信息
 

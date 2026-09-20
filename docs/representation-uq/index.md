@@ -56,6 +56,8 @@ tags:
 
 - [hidden state 与不确定性](hidden-state-uncertainty.md)
 - [高效 UQ](../efficient-uq/index.md)
+- [Azaria 2023：用内部激活预测陈述真假](../papers/2023-azaria-internal-state.md)
+- [Kossen 2024：用探针预测高、低语义熵](../papers/2024-kossen-semantic-entropy-probes.md)
 
 ## 参考文献
 

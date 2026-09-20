@@ -25,7 +25,7 @@ $$
 
 输入端的 token embedding 通常从词表表示中取得；经过模型层处理后的 hidden state 则结合了当前位置允许使用的上下文。因而，同一个 token 出现在不同上下文中时，其 hidden state 可以不同。
 
-[Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need "文献引用") 的 decoder 使用因果约束，使一个位置只能读取自身及此前位置的信息。本页只需要这一约束与逐层处理的概念，更完整的 Transformer architecture 可以后续单独建立 canonical page。
+[Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need "文献引用") 的 decoder 使用因果约束，使一个位置只能读取自身及此前位置的信息。本页聚焦这一约束与逐层处理怎样影响内部表征，不展开完整的 Transformer 结构。
 
 ## Hidden state 怎样连接 logits
 

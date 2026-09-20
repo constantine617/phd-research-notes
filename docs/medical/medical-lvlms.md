@@ -31,7 +31,9 @@ tags:
 
 ## 相关笔记
 
+- [LLaVA-Med 论文笔记：领域适配、训练数据与评价边界](../papers/2023-li-llava-med.md)
 - [医学 Benchmark](../evaluation/benchmarks/medical-benchmarks.md)
+- [医学评价](medical-evaluation.md)
 
 ## 参考文献
 

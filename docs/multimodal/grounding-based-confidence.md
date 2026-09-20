@@ -36,6 +36,10 @@ tags:
 
 高支持分数也无法保证全部正确：视觉上合理的主张可能依赖错误对象，外部知识部分可能未经验证。证据链应允许研究者看到分数针对的具体内容。
 
+## 相关笔记
+
+- [Favero et al.（2024）论文笔记：图像依赖分数的用途与边界](../papers/2024-favero-m3id.md)
+
 ## 参考文献
 
 - Favero, A., Zancato, L., Trager, M., Choudhary, S., Perera, P., Achille, A., Swaminathan, A., Soatto, S. (2024). *Multi-Modal Hallucination Control by Visual Information Grounding*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 14303–14312. [Paper](https://openaccess.thecvf.com/content/CVPR2024/html/Favero_Multi-Modal_Hallucination_Control_by_Visual_Information_Grounding_CVPR_2024_paper.html)

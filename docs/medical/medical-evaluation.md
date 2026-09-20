@@ -33,6 +33,11 @@ tags:
 
 置信度与拒答策略应同时报告校准、排序、[选择性风险](../evaluation/selective-prediction/risk-coverage.md)及转交成本。最终评价对象是指定任务中的完整流程；高模型分数本身不证明流程有效。
 
+## 相关笔记
+
+- [Yu et al.（2023）论文笔记：胸部 X 光报告指标与专家错误评价](../papers/2023-yu-radiology-evaluation.md)
+- [人工评价：标注指南、独立性与分歧处理](../evaluation/ground-truth/human-evaluation.md)
+
 ## 参考文献
 
 - Lau, J. J., Gayen, S., Ben Abacha, A., Demner-Fushman, D. (2018). *A dataset of clinically generated visual questions and answers about radiology images*. Scientific Data, 5, 180251. [Paper](https://www.nature.com/articles/sdata2018251)

@@ -35,6 +35,7 @@ tags:
 
 ## 相关笔记
 
+- [Favero et al.（2024）论文笔记：视觉信息依赖与 M3ID](../papers/2024-favero-m3id.md)
 - [幻觉缓解](../hallucination/mitigation.md)
 
 ## 参考文献

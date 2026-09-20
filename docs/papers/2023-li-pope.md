@@ -6,7 +6,7 @@ tags:
   - benchmark
 ---
 
-# Evaluating Object Hallucination in LVLM
+# Evaluating Object Hallucination in Large Vision-Language Models
 
 ## 文献信息
 

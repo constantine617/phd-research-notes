@@ -53,6 +53,8 @@ tags:
 - [校准总览](index.md)
 - [后处理校准](post-hoc-calibration.md)
 - [证据感知 UQ](../uncertainty/evidence-aware/index.md)
+- [Guo 2017：分类概率的后处理校准](../papers/2017-guo-calibration.md)
+- [Tian 2023：通过 prompt 获取语言自报置信度](../papers/2023-tian-verbal-confidence.md)
 
 ## 参考文献
 

@@ -6,7 +6,7 @@ tags:
 
 # 自一致性（Self-Consistency）
 
-Self-Consistency 原始工作的目标是改进推理任务的 decoding 与答案聚合。[Wang et al. (2023)](https://arxiv.org/abs/2203.11171v4 "文献引用") 在CoTprompt 的基础上生成多条推理路径，再对最终答案聚合。论文于 2022 年发布预印本，正式发表于 ICLR 2023。**原方法不应被描述为最初就是 UQ 方法。**
+Self-Consistency 原始工作的目标是改进推理任务的 decoding 与答案聚合。[Wang et al. (2023)](https://arxiv.org/abs/2203.11171v4 "文献引用") 在 CoT prompt 的基础上生成多条推理路径，再对最终答案聚合。论文于 2022 年发布预印本，正式发表于 ICLR 2023。**原方法不应被描述为最初就是 UQ 方法。**
 
 ## 原始方法如何工作
 
@@ -54,6 +54,8 @@ $\mathbf 1[\cdot]$ 是指示函数，条件成立时取一，否则取零；$K$ 
 
 - [Sampling 总览](index.md)
 - [不确定性与正确性](../foundations/uncertainty-vs-correctness.md)
+- [Wang 2023：自一致性与答案选择](../../papers/2023-wang-self-consistency.md)
+- [Sampling 设置](../../evaluation/experimental-protocols/sampling-settings.md)
 
 ## 参考文献
 

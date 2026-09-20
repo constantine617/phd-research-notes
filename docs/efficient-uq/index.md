@@ -57,6 +57,8 @@ tags:
 
 - [基于概率的 UQ](../uncertainty/probability-based/index.md)
 - [hidden state 与不确定性](../representation-uq/hidden-state-uncertainty.md)
+- [Kossen 2024：语义熵探针的离线与在线成本](../papers/2024-kossen-semantic-entropy-probes.md)
+- [效率指标与成本记录](../evaluation/efficiency-metrics.md)
 
 ## 参考文献
 

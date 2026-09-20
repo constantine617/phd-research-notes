@@ -77,6 +77,12 @@ NLI 可以检查证据是否蕴含或反驳主张，但这是给定前提下的�
 
 与 UQ 的连接也在这里：先定义参考真值、[错误类型](hallucination-taxonomy.md)和检测单位，再评价信号能否排序风险、如何解释以及需要多少成本。置信度、正确性和可靠性（Reliability）的进一步区别，见[正确性与可靠性](reliability-correctness.md)。
 
+## 相关笔记
+
+- [Manakul 2023：SelfCheckGPT 句子一致性检测](../papers/2023-manakul-selfcheckgpt.md)
+- [Farquhar 2024：语义熵的检测对象与实验条件](../papers/2024-farquhar-semantic-entropy.md)
+- [检测指标与分数方向](../evaluation/detection-metrics/index.md)
+
 ## 参考文献
 
 - Manakul, P., Liusie, A., Gales, M. J. F. (2023). *SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models*. EMNLP, 9004–9017. [Paper](https://aclanthology.org/2023.emnlp-main.557/)

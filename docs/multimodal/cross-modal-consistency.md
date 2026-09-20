@@ -33,8 +33,10 @@ tags:
 
 ## 相关笔记
 
+- [Khan and Fu（2024）论文笔记：邻域问题一致性与选择性视觉问答](../papers/2024-khan-consistency-uncertainty.md)
 - [多模态证据](multimodal-evidence.md)
 - [基于视觉支持的置信度](grounding-based-confidence.md)
+- [风险–覆盖率：评价选择性回答](../evaluation/selective-prediction/risk-coverage.md)
 
 ## 参考文献
 
