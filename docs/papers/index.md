@@ -13,6 +13,7 @@ tags:
 - [Guo et al. (2017)：现代网络的校准与温度缩放](2017-guo-calibration.md)。
 - [Tian et al. (2023)：通过 prompt 获取语言自报置信度](2023-tian-verbal-confidence.md)。
 - [Lamb et al. (2026)：学习 token 温度以改善语义 UQ](2026-lamb-semantic-calibration.md "文献引用")。
+- [Ji et al. (2025)：用内部方向校准不确定性表达](2025-ji-verbal-uncertainty.md "文献引用")。
 
 ## 多次生成的分歧意味着什么
 
@@ -32,6 +33,7 @@ tags:
 - [Li et al. (2023)：POPE 物体存在性探测](2023-li-pope.md)。
 - [Khan and Fu (2024)：邻近问题一致性与选择性视觉问答](2024-khan-consistency-uncertainty.md)。
 - [Favero et al. (2024)：视觉条件 decoding 干预](2024-favero-m3id.md)。
+- [Ding et al. (2026)：CGVR 矛盾提示与视觉核查](2026-ding-cgvr.md "文献引用")。
 
 ## 医学适配与评价需要哪些额外证据
 
